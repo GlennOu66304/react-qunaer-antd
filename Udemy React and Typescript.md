@@ -1,5 +1,28 @@
 # Udemy React and Typescript
 
+## Page content:
+
+
+
+
+
+
+New git branch: React Router use
+
+1.React Router with Project:
+1)install the React Router: dev mode
+2)typescrip support:
+a:search baidu
+b:type package
+2.create a page folder
+1)move the files into the page folder
+2)home.tsx clean the file:class component
+3.use it in the app.js
+1)react router import
+2)browser use
+3)route use
+
+
 
 ## antd MenuItem should not leave undefined `key`.下拉无法回收
 
@@ -31,8 +54,8 @@ API is on the chapter 64
 ## typescript
 1.Video Nest+typescript
 2.React + typescript
-3.Learning
-
+3.Learning(github)
+4.udemy typescript free course 阿莱克斯 Liu
 
 
 

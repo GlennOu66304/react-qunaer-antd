@@ -1,13 +1,41 @@
 import React from "react";
-import logo from "./logo.svg";
 // import './App.css';
 // 4.change and clean clean the file
 // 1)change the App.css to App.module.css
 // 2)App.tsx change as well：
 import styles from "./App.module.css";
-// import 'antd/dist/antd.css';
-import { Typography, Menu, Dropdown, Layout, Input, Button } from "antd";
-import { GlobalOutlined } from "@ant-design/icons";
+// to use this trick, you need to put the index.ts file under header folder, footer folder to export the component Header, Footer ,
+// then  folder also under components folder to export the header, footer folder
+import {
+  Header,
+  Footer,
+  SideMenu,
+  Carousel,
+  ProductCollection,
+  BusinessPartners
+} from "./components";
+
+// ## Component to format the project
+// o.assetes and component folder
+// under the component folder
+// 1.Header & Footer:
+// 1)folder
+// 2)css file
+// 3)tsx file: make sure the html css layout is correct, do not put the comment above the div.
+// 4)
+// 4)index.ts
+import { Row, Col,Typography } from "antd";
+
+
+// a. Mock Up data for the whole project :data import : this is from the mockup.tsx under the src folder and 
+// export it into the App.tsx
+import {productList1,productList2,productList3} from './mockups'
+
+// image import 
+import SideImage1 from './assets/images/sider_2019_12-09.png';
+import SideImage2 from './assets/images/sider_2019_02-04.png';
+import SideImage3 from './assets/images/sider_2019_02-04-2.png';
+
 
 function App() {
   return (
@@ -15,115 +43,55 @@ function App() {
 
     // 1)clean the file;
     <div className={styles.App}>
+      {/* import the Header, Footer component */}
+      <Header />
+      {/* content */}
+      <div className={styles["page-content"]}>
+        <Row style={{ marginTop: 20 }}>
+          <Col span={6}>
+            <SideMenu />
+          </Col>
+          
+          <Col span={18}>
+            <Carousel />
+          </Col>
+        </Row>
 
-      {/* Header */}   
-      <div className={styles["app-header"]}>
-        {/* topheader */}
-     
-        <div className={styles["top-header"]}>
+        {/* website body content  */}
 
-          <div className={styles.inner}>
-            {/* slogan */}
-            <Typography.Text>让旅游更轻松</Typography.Text>
+        {/* 爆款推荐 */}
+        <ProductCollection 
+         title={<Typography.Title level={1} type="warning">爆款推荐</Typography.Title>}
+        //  Here will come with erro,you need to define the PropsTypes in the child component
+        // ProductCollection, then error will be gone
+         sideImage={SideImage1}
+         products={productList1}
+        />
 
-            {/* language  */}
-            <Dropdown.Button
-              style={{ marginLeft: 15 }}
-              overlay={
-                <Menu>
-                  <Menu.Item>中文</Menu.Item>
-                  <Menu.Item>英文</Menu.Item>
-                </Menu>
-              }
-              icon={<GlobalOutlined />}
-            >
-              语言
-            </Dropdown.Button>
+        {/* 新品上市 */}
+        <ProductCollection 
+         title={<Typography.Title level={1} type="danger">新款上市</Typography.Title>}
+        //  Here will come with erro,you need to define the PropsTypes in the child component
+        // ProductCollection, then error will be gone
+         sideImage={SideImage2}
+         products={productList2}
+        />
 
-            {/* register or login */}
-            <Button.Group className={styles["button-group"]}>
-              <Button>注册</Button>
-              <Button>登录</Button>
-            </Button.Group>
-          </div>
-        </div>
-        
-        {/* main Header */}
-        <Layout.Header className={styles["main-header"]}>
-          {/* logo */}
-          <img src={logo} alt="" className={styles["app-logo"]} />
+        {/* 国内游推荐 */}
+        <ProductCollection 
+         title={<Typography.Title level={1} type="success">国内旅游推荐</Typography.Title>}
+        //  Here will come with erro,you need to define the PropsTypes in the child component
+        // ProductCollection, then error will be gone
+         sideImage={SideImage3}
+         products={productList3}
+        />
+      </div> 
 
-          {/* title */}
-          <Typography.Title level={3} className={styles.title}>
-            React旅游网
-          </Typography.Title>
+{/* BusinessPartners */}
+<BusinessPartners/>
 
-          {/* search */}
-          <Input.Search
-            className={styles["search-input"]}
-            placeholder="请输入旅游目的地，主题，或关键字"
-          />
-        </Layout.Header>
-      </div>
-
-         {/* body */}
-<Menu mode="horizontal" className={styles["main-menu"]}>
- <Menu.Item>
-   旅游首页
- </Menu.Item>
- <Menu.Item>
-  周末游
- </Menu.Item>
- <Menu.Item>
-  跟团游
- </Menu.Item>
- <Menu.Item>
-  自由行
- </Menu.Item>
- <Menu.Item>
- 私家团
- </Menu.Item>
- <Menu.Item>
- 游轮
- </Menu.Item>
- <Menu.Item>
-   酒店+景点
- </Menu.Item>
- <Menu.Item>
-  当地玩乐
- </Menu.Item>
- <Menu.Item>
-  主题游
- </Menu.Item>
- <Menu.Item>
-  定制游
- </Menu.Item>
- <Menu.Item>
- 游学
- </Menu.Item>
- <Menu.Item>
-签证
- </Menu.Item>
- <Menu.Item>
-企业游
- </Menu.Item>
- <Menu.Item>
-高端游
- </Menu.Item>
- <Menu.Item>
-爱玩户外
- </Menu.Item>
- <Menu.Item>
-保险
- </Menu.Item>
-</Menu>
-
-
-        {/* Footer */}
-        <Layout.Footer style={{textAlign:"center"}} >
-        <Typography.Title level={3}>此版权归@react旅游网</Typography.Title>
-
-        </Layout.Footer>
+      {/* footer */}
+      <Footer />
     </div>
   );
 }
