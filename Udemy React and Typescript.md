@@ -4,40 +4,14 @@
 
 A.extra webpack log output:
 
-1.git checkout new branch
-2.downgrade the create react:
-1)change the react and react dom to react 16
-2)B.typescripe package issue fix:
-remove it from the depense
-2)remove the node modules
-3)npm i
-4)npm start
+
 
 git old branch delete
-build new branch git 46-1
-to migrate the content from git  46 to 46-1
-
 
 git checkout to branch 46
 
-copy exta folder in the desktop
-
-git checkout to git branch 46-1
-
 New git branch: React Router use
 
-1.React Router with Project:
-1)install the React Router: dev mode
-2)typescrip support:
-a:search baidu
-b:type package
-2.create a page folder
-1)move the files into the page folder
-2)home.tsx clean the file:class component
-3.use it in the app.js
-1)react router import
-2)browser use
-3)route use
 
 
 

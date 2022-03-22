@@ -43,6 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "react-router-dom": "^6.2.2",
     "typescript-plugin-css-modules": "^3.4.0"
   }
 }
