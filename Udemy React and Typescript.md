@@ -16,12 +16,13 @@ remove it from the depense
 git old branch delete
 build new branch git 46-1
 to migrate the content from git  46 to 46-1
-liba
-
-npm i
-npm start
 
 
+git checkout to branch 46
+
+copy exta folder in the desktop
+
+git checkout to git branch 46-1
 
 New git branch: React Router use
 
