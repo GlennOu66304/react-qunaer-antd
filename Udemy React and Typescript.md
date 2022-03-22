@@ -2,17 +2,24 @@
 
 ## Page content:
 
-A.extra webpack log output:
 
 
 
-git old branch delete
+## A.extra webpack log output:
+Mainly caused by the react-script version, I tried npm run eject issue, tried to modify some changes in the webpack config, but that is way more complex for me. So I decided to downgrade my react-script version.
+Webpack: silence output
+https://stackoverflow.com/questions/30756804/webpack-silence-output
 
-git checkout to branch 46
+By downgrading the creat-react-app's react version to 17.0.1, react-dom to ^17.0.1, then react-script version to 4.0.1 in the package.json, remove the node modules. run npm i, then npm start can fix the extra webpack lout issue
 
-New git branch: React Router use
+How to downgrade React version 17 to 16?
+https://stackoverflow.com/questions/68109043/how-to-downgrade-react-version-17-to-16#:~:text=Search%20for%20the%20react%20and,to%20downgrade%20to%20React%2016.
 
+[CRA 5.0 show webpack's log](https://github.com/facebook/create-react-app/issues/11871)    
 
+## -D, --save-dev: Package will appear in your devDependencies
+-D, --save-dev: Package will appear in your devDependencies
+[npm-install](https://docs.npmjs.com/cli/v8/commands/npm-install)
 
 
 ## antd MenuItem should not leave undefined `key`.下拉无法回收

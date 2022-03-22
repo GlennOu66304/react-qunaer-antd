@@ -21,7 +21,7 @@ import SideImage2 from "../../assets/images/sider_2019_02-04.png";
 import SideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 
 
-// Do not use the export default, it will case the export failed when you use the short cut rcc
+// Do not use the export default, it will cause the export failed when you use the short cut rcc
 
 export  class HomePage extends React.Component {
   render() {
