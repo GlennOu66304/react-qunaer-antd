@@ -4,15 +4,16 @@
 
 
 ## Redux Moment Explain
-build a new git branch
 
-install reduex
-class project cleaning:Header.Class.tsx: original option and Class option: HOC option( initail, it is the Hooks option, and change it to the HOC option)
-export as Header.Class.tsx in the index.ts
-reduex folder
- store value will be process by the reducer
-store.ts: 
-build the store
+
+
+
+
+
+
+
+
+
 reducer.ts
 use it in the header.tsx
 interface extends
