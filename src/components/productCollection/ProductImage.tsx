@@ -3,7 +3,7 @@ import { Image, Typography } from "antd";
 // 1.withRouter （HOC) import
 // you can import withRouter from react-router-dom
 
-import { RouteComponentProps, withRouter } from "react-router-dom";
+import { RouteComponentProps, withRouter,Link} from "react-router-dom";
 
 interface PropsType extends RouteComponentProps {
   id: string | number;
@@ -34,10 +34,7 @@ const ProductImageComponent: React.FC<PropsType> = ({
   return (
     // click the image to image deails:product image component
     // 4.WithRouter push to deatails{id}, onClick event can push the router
-    <div
-      onClick={() => {
-        history.push(`/detail/${id}`);
-      }}
+    <Link to={`/detail/${id}`}
     >
       {size === "large" ? (
         <Image src={imageSrc} height={285} width={513} />
@@ -51,7 +48,7 @@ const ProductImageComponent: React.FC<PropsType> = ({
           ￥{price} 起
         </Typography.Text>
       </div>
-    </div>
+    </Link>
   );
 };
 

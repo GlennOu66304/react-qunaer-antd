@@ -3,12 +3,14 @@
 ## Page content:
 
 
+## Link
+import Link
+remove the onLick
 
 
 
 
 
-III.git new branch build
 
 
 ## A.extra webpack log output:
