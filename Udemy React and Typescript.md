@@ -1,11 +1,38 @@
 # Udemy React and Typescript
 
-## Page content:
 
 
-## Link
-import Link
-remove the onLick
+
+## Redux Moment Explain
+build a new git branch
+
+install reduex
+class project cleaning:Header.Class.tsx: original option and Class option: HOC option( initail, it is the Hooks option, and change it to the HOC option)
+export as Header.Class.tsx in the index.ts
+reduex folder
+ store value will be process by the reducer
+store.ts: 
+build the store
+reducer.ts
+use it in the header.tsx
+interface extends
+constructor props
+map function render the Menu.Item
+defaule language option to replace 语言
+
+
+
+1.install reduex,
+2.create the store
+3.provider and store in root directoy:index.tsx
+4.reducer, action combine reducer
+5.xx.dispatch(action comp[onet])
+6.map reducer. map
+
+fullstack reduex
+ant design
+react admin
+linkin
 
 
 
