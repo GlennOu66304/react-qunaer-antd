@@ -2,8 +2,24 @@
 
 ## Page content:
 
+A.extra webpack log output:
 
+1.git checkout new branch
+2.downgrade the create react:
+1)change the react and react dom to react 16
+2)B.typescripe package issue fix:
+remove it from the depense
+2)remove the node modules
+3)npm i
+4)npm start
 
+git old branch delete
+build new branch git 46-1
+to migrate the content from git  46 to 46-1
+liba
+
+npm i
+npm start
 
 
 
