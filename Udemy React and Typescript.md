@@ -5,6 +5,12 @@
 
 
 
+
+
+
+III.git new branch build
+
+
 ## A.extra webpack log output:
 Mainly caused by the react-script version, I tried npm run eject issue, tried to modify some changes in the webpack config, but that is way more complex for me. So I decided to downgrade my react-script version.
 Webpack: silence output
