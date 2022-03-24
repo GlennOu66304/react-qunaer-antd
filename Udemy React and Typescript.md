@@ -1,28 +1,23 @@
-# Udemy React and Typescript
-0.Goal chieve the language change by choosing the  Chinese or English:
+## Udemy React and Typescript
+0.Clean the code structure
+1..action creater folder:
+1)languageActioncreator.ts
+2)interface AddLanguage
+3)interface Language
+4)export addLanguage action
+5)export language action
+6)interface mix
+3.reducer use
+1)import the actioncreator file;
+2)change the case type
+4.head fileuse
+1)import the file;
+2)change the file structure
 
-1.languaga pack import:
-configures
-ZH
-EN
+## start the language
 
-2.package install and mofification:
-1)new ts file
 
-Class file:
-HOC, 
-two brackets
-With translation with translation
-t.header
-
-function file use
-useTranslation, withTranlation
-t.hhh
-
-Header
-Footer file
-HomePage
-
+## Change the language
 3.reducer file update: language api use
 
 

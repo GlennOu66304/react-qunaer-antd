@@ -14,7 +14,9 @@ import { Row, Col, Typography } from "antd";
 // a. Mock Up data for the whole project :data import : this is from the mockup.tsx under the src folder and
 // export it into the App.tsx
 import { productList1, productList2, productList3 } from "./mockups";
-
+import { withRouter, RouteComponentProps } from "react-router-dom";
+import '../../i18n/configs'
+import { withTranslation, WithTranslation } from 'react-i18next'
 // image import
 import SideImage1 from "../../assets/images/sider_2019_12-09.png";
 import SideImage2 from "../../assets/images/sider_2019_02-04.png";
@@ -22,8 +24,11 @@ import SideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 
 // Do not use the export default, it will cause the export failed when you use the short cut rcc
 
-export class HomePage extends Component {
+class HomePageComponent extends Component <RouteComponentProps&WithTranslation>  {
+
+
   render() {
+    const {t} = this.props
     return (
       
       <>
@@ -46,7 +51,7 @@ export class HomePage extends Component {
           <ProductCollection
             title={
               <Typography.Title level={1} type="warning">
-                爆款推荐
+               {t('home_page.hot_recommended')}
               </Typography.Title>
             }
             //  Here will come with erro,you need to define the PropsTypes in the child component
@@ -59,7 +64,7 @@ export class HomePage extends Component {
           <ProductCollection
             title={
               <Typography.Title level={1} type="danger">
-                新款上市
+               {t('home_page.new_arrival')}
               </Typography.Title>
             }
             //  Here will come with erro,you need to define the PropsTypes in the child component
@@ -72,7 +77,7 @@ export class HomePage extends Component {
           <ProductCollection
             title={
               <Typography.Title level={1} type="success">
-                国内旅游推荐
+                {t('home_page.domestic_travel')}
               </Typography.Title>
             }
             //  Here will come with erro,you need to define the PropsTypes in the child component
@@ -91,3 +96,5 @@ export class HomePage extends Component {
     );
   }
 }
+
+export const HomePage = withTranslation()(withRouter(HomePageComponent))

@@ -1,3 +1,4 @@
+import i18n from 'i18next'
 // interface option
 
 export interface LanguageState {
@@ -26,6 +27,7 @@ export default (state = defaultState, action) => {
   // switch is a fuction
   switch (action.type) {
     case "change_language": {
+      i18n.changeLanguage(action.payload);//3.reducer file update: language api use
       // 6.copay the previous state, then add the action payload
       return { ...state, language: action.payload };
     }

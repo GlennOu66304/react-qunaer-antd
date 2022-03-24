@@ -9,6 +9,8 @@ import Image2 from "../../assets/images/icon-720944_640.png";
 import Image3 from "../../assets/images/follow-826033_640.png";
 import Image4 from "../../assets/images/facebook-807588_640.png";
 
+
+import {useTranslation} from "react-i18next"
 // make the image into a array
 const companies = [
   { src: Image1, title: "Microsoft" },
@@ -17,12 +19,13 @@ const companies = [
   { src: Image4, title: "Facebook" },
 ];
 export const BusinessPartners: React.FC = () => {
+  const {t} = useTranslation();
   return (
     <div className={styles.content}>
       {/* // 合作企业 */}
       {/* Section Titel Text */}
       <Divider orientation="left">
-        <Typography.Title level={1}> 合作企业</Typography.Title>
+        <Typography.Title level={1}> {t("home_page.joint_venture")}</Typography.Title>
       </Divider>
 
       <Row>

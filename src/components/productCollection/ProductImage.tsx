@@ -4,7 +4,7 @@ import { Image, Typography } from "antd";
 // you can import withRouter from react-router-dom
 
 import { RouteComponentProps, withRouter,Link} from "react-router-dom";
-
+import {useTranslation} from 'react-i18next'
 interface PropsType extends RouteComponentProps {
   id: string | number;
   size: string;
@@ -31,7 +31,9 @@ const ProductImageComponent: React.FC<PropsType> = ({
   location,
   match,
 }) => {
+  const {t} = useTranslation()
   return (
+   
     // click the image to image deails:product image component
     // 4.WithRouter push to deatails{id}, onClick event can push the router
     <Link to={`/detail/${id}`}
@@ -45,7 +47,7 @@ const ProductImageComponent: React.FC<PropsType> = ({
         <Typography.Text type="secondary">{title.slice(0, 25)}</Typography.Text>
         <Typography.Text type="danger" strong>
           {" "}
-          ￥{price} 起
+          ￥{price} {t('home_page.start_from')}
         </Typography.Text>
       </div>
     </Link>
