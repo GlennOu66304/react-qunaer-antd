@@ -1,3 +1,6 @@
+// //Read the old project, then add the comment, then orgazize it into the logic flow, and commit it intot the project
+//list the goal of the feature first
+
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
@@ -19,6 +22,10 @@ import { LanguageState } from "../../reduex/languageReducer";
 interface State extends LanguageState {}
 
 class HeaderConponent extends React.Component<RouteComponentProps, State> {
+  //  interface extends
+  // constructor props
+  // map function render the Menu.Item
+  // defaule language option to replace 语言
   constructor(props) {
     super(props);
     const storeState = store.getState();
@@ -26,7 +33,51 @@ class HeaderConponent extends React.Component<RouteComponentProps, State> {
       language: storeState.language,
       languageList: storeState.languageList,
     };
+
+    // 3.store.subscribe the change
+    store.subscribe(this.storeStateHandle);
   }
+
+  storeStateHandle = () => {
+    // get the updated state
+    const storeState = store.getState();
+    // console.log(storeState)
+    // this .setstate change the code value
+    this.setState({
+      language: storeState.language, // it will trigger the  {this.state.language === "zh" ? "中文" : "English"} code update the code content
+      languageList: storeState.languageList,
+    });
+  };
+
+  // I.update the language section by choose language type;
+
+  //2. event handler
+  menuClickHandler = (e) =>
+    // console.log(e)
+    // 3.deine the action:action build:type,payload is in the project
+    // this.setState({
+    //   language: e.key,// it will trigger the  {this.state.language === "zh" ? "中文" : "English"} code update the code content
+    // });
+    {
+      if (e.key === "New") {//2.click section: to add new store.dispatch
+        const action = {
+          type: "add_newlanguage",
+          payload: { name: "添加新语言", code: "new" },
+        };
+        store.dispatch(action);
+      }
+      // 4 action is a object:action build:type,payload is in the project
+      else {
+        const action = {
+          type: "change_language",
+          payload: e.key,
+        };
+        // store.dispatch to the redeucer:n the language reducer use
+        store.dispatch(action);
+
+        // 5.store.subscribe the change:
+      }
+    };
 
   render() {
     // props import
@@ -46,15 +97,18 @@ class HeaderConponent extends React.Component<RouteComponentProps, State> {
             <Dropdown.Button
               style={{ marginLeft: 15 }}
               overlay={
-                <Menu>
+                // 1.onClick event
+                <Menu onClick={this.menuClickHandler}>
                   {this.state.languageList.map((l) => {
                     return <Menu.Item key={l.code}> {l.name} </Menu.Item>;
                   })}
+                  {/* 1.html add the new language section: Add new menu item*/}
+                  <Menu.Item key="New"> 添加新语言</Menu.Item>;
                 </Menu>
               }
               icon={<GlobalOutlined />}
             >
-              {this.state.language === "zh" ? "中文":"English"}
+              {this.state.language === "zh" ? "中文" : "English"}
             </Dropdown.Button>
 
             {/* register or login */}

@@ -1,9 +1,33 @@
 # Udemy React and Typescript
+0.Goal chieve the language change by choosing the  Chinese or English:
+
+1.languaga pack import:
+configures
+ZH
+EN
+
+2.package install and mofification:
+1)new ts file
+
+Class file:
+HOC, 
+two brackets
+With translation with translation
+t.header
+
+function file use
+useTranslation, withTranlation
+t.hhh
+
+Header
+Footer file
+HomePage
+
+3.reducer file update: language api use
 
 
 
 
-## Redux Moment Explain
 
 
 
@@ -14,26 +38,19 @@
 
 
 
-reducer.ts
-use it in the header.tsx
-interface extends
-constructor props
-map function render the Menu.Item
-defaule language option to replace 语言
 
 
 
-1.install reduex,
-2.create the store
-3.provider and store in root directoy:index.tsx
-4.reducer, action combine reducer
-5.xx.dispatch(action comp[onet])
-6.map reducer. map
 
-fullstack reduex
-ant design
-react admin
-linkin
+
+ ## Reduex:
+  github
+  1.React Didi(React Reduex)
+  2.react Admin(Reduex, need to go to the origianl project)
+  [React_Admin](https://github.dev/GlennOu66304/react-admin)
+  3.Linkedin(React Reduex)
+  4.React Typescribe
+
 
 
 
