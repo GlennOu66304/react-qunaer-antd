@@ -23,6 +23,11 @@ git new branch
 2).clean the store subscribe
 3). typescrip in the root redeucer
 
+
+constructor
+storeStateHandle
+
+
 II.Function Component Method
 1. git new branch
 2. change the Component export to the export * from './Head'(index.ts)
