@@ -1,28 +1,19 @@
 ## Udemy React and Typescript
-
-0.Goal Use the react-reduex to change the redeuex code structure, make sure language switch and adding is ok
-
-
-
-II.Function Component Method
-1. git new branch
-2. change the Component export to the export * from './Head'(index.ts)
-3. change the code to language logic:
-1) language add section 
-a.useSelector get the state value first
-b.useDispatch dispatch the action
-c.import the dispatch function then
-c. arry map loop still use the class option
-
-2) translation part add
-3) menuclickHandle function add
-4) root reucer add
-4. add the useSelector
-5. hoos.ts add
-
-
-
-
+goal: render the page based on the api response via the axios
+0.git new branch
+1.import the API file into the Postman
+2.aixos get the data:
+1)package install
+2)import the axios
+3)async componentDidMount = 
+4)await axios.get(), then()
+5)try catch
+3.loading issue fix:
+1)spin antd component
+2)loading if check
+3)
+4.error issue fix:
+5.error message
 
 
 ## start the language
