@@ -58,7 +58,9 @@ type PropsType = RouteComponentProps &
   ReturnType<typeof mapDispatchToProps>;
 
 class HeaderConponent extends React.Component<PropsType> {
-  // I.update the language section by choose language type;
+// //  7.Store dispatch and store subscribe Code change:
+// 1).clean the original store.dispach
+// 2).clean the store subscribe
 
   //2. event handler
   menuClickHandler = (e) => {

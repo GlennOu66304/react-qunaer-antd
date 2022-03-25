@@ -8,12 +8,17 @@ II.Function Component Method
 1. git new branch
 2. change the Component export to the export * from './Head'(index.ts)
 3. change the code to language logic:
-1) language add section
+1) language add section 
+a.useSelector get the state value first
+b.useDispatch dispatch the action
+c.import the dispatch function then
+c. arry map loop still use the class option
+
 2) translation part add
 3) menuclickHandle function add
 4) root reucer add
 4. add the useSelector
-5. 
+5. hoos.ts add
 
 
 
