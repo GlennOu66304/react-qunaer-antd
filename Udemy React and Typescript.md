@@ -16,7 +16,16 @@ goal: render the page based on the api response via the axios
 5.error message
 
 
-## start the language
+## axios react
+gtf
+social media sites
+react admin
+Linkinedin
+project list
+restaurant review (axios)
+amazon
+Gmail
+
 
 
 ## Change the language
