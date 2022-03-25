@@ -61,40 +61,13 @@ class HeaderConponent extends React.Component<PropsType> {
   // I.update the language section by choose language type;
 
   //2. event handler
-  menuClickHandler = (e) =>
-    // console.log(e)
-    // 3.deine the action:action build:type,payload is in the project
-    // this.setState({
-    //   language: e.key,// it will trigger the  {this.state.language === "zh" ? "中文" : "English"} code update the code content
-    // });
-    {
-      if (e.key === "New") {
-        //2.click section: to add new store.dispatch
-        // const action = {
-        //   type: "add_newlanguage",
-        //   payload: { name: "添加新语言", code: "new" },
-        // };
-        // const action = addLanguageActionCreator("新语言", "new");
-        // store.dispatch(action);
-        // };
-        this.props.addlanguage("新语言", "new");
-      }
-      // 4 action is a object:action build:type,payload is in the project
-      else {
-        // const action = {
-        //   type: "change_language",
-        //   payload: e.key,
-        // };
-        // const action = changeLanguageActionCreator(e.key);
-        // // store.dispatch to the redeucer:n the language reducer use
-        // // 2)change the file structure
-        // store.dispatch(action);
-
-        // 5.store.subscribe the change:
-
-        this.props.changelanguage(e.key);
-      }
-    };
+  menuClickHandler = (e) => {
+    if (e.key === "New") {
+      this.props.addlanguage("新语言", "new");
+    } else {
+      this.props.changelanguage(e.key);
+    }
+  };
 
   render() {
     // props import
