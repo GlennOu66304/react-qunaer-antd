@@ -44,39 +44,13 @@ II.Function Component Method
 
 ## Change the language
 3.reducer file update: language api use
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ## Reduex:
+ ## Redux:
   github
   1.React Didi(React Reduex)
   2.react Admin(Reduex, need to go to the origianl project)
   [React_Admin](https://github.dev/GlennOu66304/react-admin)
   3.Linkedin(React Reduex)
   4.React Typescribe
-
-
-
-
-
-
-
 
 ## A.extra webpack log output:
 Mainly caused by the react-script version, I tried npm run eject issue, tried to modify some changes in the webpack config, but that is way more complex for me. So I decided to downgrade my react-script version.
@@ -110,7 +84,6 @@ Chapter 10.2(Follow the Meituan Project build logic)
 ## Back end API
 API is on the chapter 64
 
-
 ## Ant design
 
 0.github fullstack antd explain:
@@ -120,7 +93,6 @@ API is on the chapter 64
 2.React + typescript Travel:github react travel
 
 2.React Admin:react admin
-
 
 ## typescript
 1.Video Nest+typescript

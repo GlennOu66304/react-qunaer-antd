@@ -13,10 +13,13 @@ import App from './App';
 // 3)ts.config.json
 // import 'antd/dist/antd.css';
 
+import store from './reduex/store'
+import {Provider} from 'react-redux'
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
