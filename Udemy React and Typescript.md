@@ -1,18 +1,43 @@
 ## Udemy React and Typescript
-0.Clean the code structure
-1..action creater folder:
-1)languageActioncreator.ts
-2)interface AddLanguage
-3)interface Language
-4)export addLanguage action
-5)export language action
-6)interface mix
-3.reducer use
-1)import the actioncreator file;
-2)change the case type
-4.head fileuse
-1)import the file;
-2)change the file structure
+
+0.Goal Use the react-reduex to change the redeuex code structure, make sure language switch and adding is ok
+
+I. Class Component Method:
+git new branch
+0.install the react-redux package, @types/react-redux --save-dev
+
+1.App.tsx add Provider and store
+2.Add the connect in the Head.tsx
+3.Root State in the store.ts 
+4.Map Props reducer:import the mapProps:
+1)import it from the react reduex
+2)HOC Component to organize the project
+3)paramas in function add the type check
+5.Map dispatch:
+1)import it 
+2)use it
+3)3)paramas in function add the type check
+6.Class Component Function paramas type script check
+7.Store dispatch and store subscribe Code change:
+1).clean the original store.dispach
+2).clean the store subscribe
+3). typescrip in the root redeucer
+
+II.Function Component Method
+1. git new branch
+2. change the Component export to the export * from './Head'(index.ts)
+3. change the code to language logic:
+1) language add section
+2) translation part add
+3) menuclickHandle function add
+4) root reucer add
+4. add the useSelector
+5. 
+
+
+
+
+
 
 ## start the language
 

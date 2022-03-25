@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import LanguageReducer from "./languageReducer";
+import LanguageReducer from "./language/languageReducer";
 
 // store value will be process by the reducer
 

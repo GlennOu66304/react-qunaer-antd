@@ -17,7 +17,9 @@ import { withRouter, RouteComponentProps } from "react-router-dom";
 // use it in the header.tsx
 import store from "../../reduex/store";
 // interface extends
-import { LanguageState } from "../../reduex/languageReducer";
+import { LanguageState } from "../../reduex/language/languageReducer";
+// 1)import the actionCreator from the actions;
+import { changeLanguageActionCreator,addLanguageActionCreator } from "../../reduex/language/languageActions";
 import '../../i18n/configs'
 import { withTranslation, WithTranslation } from 'react-i18next'
 
@@ -63,19 +65,22 @@ class HeaderConponent extends React.Component<RouteComponentProps&WithTranslatio
     // });
     {
       if (e.key === "New") {//2.click section: to add new store.dispatch
-        const action = {
-          type: "add_newlanguage",
-          payload: { name: "添加新语言", code: "new" },
-        };
+        // const action = {
+        //   type: "add_newlanguage",
+        //   payload: { name: "添加新语言", code: "new" },
+        // };
+        const action = addLanguageActionCreator("新语言", "new")
         store.dispatch(action);
       }
       // 4 action is a object:action build:type,payload is in the project
       else {
-        const action = {
-          type: "change_language",
-          payload: e.key,
-        };
+        // const action = {
+        //   type: "change_language",
+        //   payload: e.key,
+        // };
+        const action = changeLanguageActionCreator(e.key)
         // store.dispatch to the redeucer:n the language reducer use
+        // 2)change the file structure
         store.dispatch(action);
 
         // 5.store.subscribe the change:

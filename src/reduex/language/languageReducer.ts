@@ -1,4 +1,7 @@
 import i18n from 'i18next'
+
+// 1)import the actioncreator file;
+import { CHANGE_LANGUAGE, ADD_LANGUAGE, LanguageActionTypes } from './languageActions';
 // interface option
 
 export interface LanguageState {
@@ -22,16 +25,17 @@ const defaultState: LanguageState = {
 
 // How can I get rid of the warning import/no-anonymous-default-export in React?
 // https://stackoverflow.com/questions/64729264/how-can-i-get-rid-of-the-warning-import-no-anonymous-default-export-in-react
-export default (state = defaultState, action) => {
+export default (state = defaultState, action:LanguageActionTypes) => {
   // console.log(state,action);
   // switch is a fuction
   switch (action.type) {
-    case "change_language": {
+    // 2)change the case type
+    case CHANGE_LANGUAGE: {
       i18n.changeLanguage(action.payload);//3.reducer file update: language api use
       // 6.copay the previous state, then add the action payload
       return { ...state, language: action.payload };
     }
-    case  "add_newlanguage":{//3.redeucer update
+    case  ADD_LANGUAGE:{//3.redeucer update
 
          return { ...state, languageList: [...state.languageList, action.payload]};//copy the original state and state.languageList as well
     }
