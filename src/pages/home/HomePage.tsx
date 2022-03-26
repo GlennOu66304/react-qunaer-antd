@@ -14,7 +14,7 @@ import { Row, Col, Typography, Spin } from "antd";
 // a. Mock Up data for the whole project :data import : this is from the mockup.tsx under the src folder and
 // export it into the App.tsx
 // import { productList1, productList2, productList3 } from "./mockups";
-import axios from "axios";
+
 
 // import { withRouter,RouteComponentProps } from "react-router-dom";
 import "../../i18n/configs";
@@ -25,12 +25,10 @@ import SideImage2 from "../../assets/images/sider_2019_02-04.png";
 import SideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
+
 import { RootState } from "../../reduex/store";
 import {
-  FetchRecommendProductStartActionCreator,
-  FetchRecommendProductSuccessActionCreator,
-  FetchRecommendProductFailtActionCreator,
+  giveMeDataActionCreator
 } from "../../reduex/recommendation/recommendationActions";
 const mapStateToProps = (state: RootState) => {
   return {
@@ -40,23 +38,13 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     // fetchStart name there is no relationship with recommnendationAction.ts, this is a function name, will be used in the constructor
 // in the componentDidMount function as a function name to call back, then trigger the action creator, and process the reducer
-    fectchStart: () => {
-      const action = FetchRecommendProductStartActionCreator();
-      dispatch(action);
-    },
-    fetchSuccess: (data) => {
-      const action = FetchRecommendProductSuccessActionCreator(data);
-      dispatch(action);
-    },
-
-    fetchFail: (error) => {
-      const action = FetchRecommendProductFailtActionCreator(error);
-      dispatch(action);
-    },
+      giveMeData:() => {
+        dispatch(giveMeDataActionCreator())
+      }
   };
 };
 
@@ -68,17 +56,8 @@ type PropsType = WithTranslation &
 
 class HomePageComponent extends React.Component<PropsType> {
   async componentDidMount() {
-    this.props.fectchStart();
-    try {
-      const { data } = await axios.get(
-        "http://123.56.149.216:8089/api/productCollections"
-      );
-      this.props.fetchSuccess(data);
-      // console.log(this.state.productList);
-    } catch (error: any) {
-      // console.log(error);
-      this.props.fetchFail(error.message);
-    }
+    this.props.giveMeData();
+   
   }
 
   render() {
