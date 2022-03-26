@@ -24,48 +24,65 @@ import SideImage1 from "../../assets/images/sider_2019_12-09.png";
 import SideImage2 from "../../assets/images/sider_2019_02-04.png";
 import SideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 
-interface State {
-  productList: any[];
-  loading: boolean;
-  error: string | null;
-}
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import { RootState } from "../../reduex/store";
+import {
+  FetchRecommendProductStartActionCreator,
+  FetchRecommendProductSuccessActionCreator,
+  FetchRecommendProductFailtActionCreator,
+} from "../../reduex/recommendation/recommendationActions";
+const mapStateToProps = (state: RootState) => {
+  return {
+    productList: state.recommendation.productList,
+    loading: state.recommendation.loading,
+    error: state.recommendation.error,
+  };
+};
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
+  return {
+    // fetchStart name there is no relationship with recommnendationAction.ts, this is a function name, will be used in the constructor
+// in the componentDidMount function as a function name to call back, then trigger the action creator, and process the reducer
+    fectchStart: () => {
+      const action = FetchRecommendProductStartActionCreator();
+      dispatch(action);
+    },
+    fetchSuccess: (data) => {
+      const action = FetchRecommendProductSuccessActionCreator(data);
+      dispatch(action);
+    },
+
+    fetchFail: (error) => {
+      const action = FetchRecommendProductFailtActionCreator(error);
+      dispatch(action);
+    },
+  };
+};
+
+type PropsType = WithTranslation &
+  ReturnType<typeof mapStateToProps> &
+  ReturnType<typeof mapDispatchToProps>;
 
 // Do not use the export default, it will cause the export failed when you use the short cut rcc
 
-class HomePageComponent extends React.Component<WithTranslation, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      productList: [],
-      loading: true,
-      error: null,
-    };
-  }
-
+class HomePageComponent extends React.Component<PropsType> {
   async componentDidMount() {
+    this.props.fectchStart();
     try {
       const { data } = await axios.get(
         "http://123.56.149.216:8089/api/productCollections"
       );
-      this.setState({
-        productList: data,
-        loading: false,
-        error: null,
-      });
-      console.log(this.state.productList);
-    } catch (error:any) {
-      console.log(error);
-
-      this.setState({
-         error: error.message,
-        loading: false,
-      });
+      this.props.fetchSuccess(data);
+      // console.log(this.state.productList);
+    } catch (error: any) {
+      // console.log(error);
+      this.props.fetchFail(error.message);
     }
   }
 
   render() {
-    const { t } = this.props;
-    const { productList, loading, error } = this.state;
+    const { t, loading, error } = this.props;
 
     if (loading) {
       return (
@@ -113,7 +130,7 @@ class HomePageComponent extends React.Component<WithTranslation, State> {
             //  Here will come with erro,you need to define the PropsTypes in the child component
             // ProductCollection, then error will be gone
             sideImage={SideImage1}
-            products={productList[0].touristRoutes}
+            products={this.props.productList[0].touristRoutes}
           />
 
           {/* 新品上市 */}
@@ -126,7 +143,7 @@ class HomePageComponent extends React.Component<WithTranslation, State> {
             //  Here will come with erro,you need to define the PropsTypes in the child component
             // ProductCollection, then error will be gone
             sideImage={SideImage2}
-            products={productList[1].touristRoutes}
+            products={this.props.productList[1].touristRoutes}
           />
 
           {/* 国内游推荐 */}
@@ -139,7 +156,7 @@ class HomePageComponent extends React.Component<WithTranslation, State> {
             //  Here will come with erro,you need to define the PropsTypes in the child component
             // ProductCollection, then error will be gone
             sideImage={SideImage3}
-            products={productList[2].touristRoutes}
+            products={this.props.productList[2].touristRoutes}
           />
         </div>
 
@@ -153,4 +170,7 @@ class HomePageComponent extends React.Component<WithTranslation, State> {
   }
 }
 
-export const HomePage = withTranslation()(HomePageComponent); // find the type error, you need to remove the withrouter and RouteComponentProps
+export const HomePage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(HomePageComponent)); // find the type error, you need to remove the withrouter and RouteComponentProps

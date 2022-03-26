@@ -1,15 +1,16 @@
 import i18n from 'i18next'
 
-// 1)import the actioncreator file;
+// 1.import the actioncreator file;
 import { CHANGE_LANGUAGE, ADD_LANGUAGE, LanguageActionTypes } from './languageActions';
-// interface option
+
+// 2.interface option
 
 export interface LanguageState {
   language: "en" | "zh";
   languageList: { name: string; code: string }[];
 }
 
-// sett the defaule state value:// it is a obeject
+//2.1 sett the defaule state value:// it is a obeject
 
 // language
 
@@ -25,6 +26,7 @@ const defaultState: LanguageState = {
 
 // How can I get rid of the warning import/no-anonymous-default-export in React?
 // https://stackoverflow.com/questions/64729264/how-can-i-get-rid-of-the-warning-import-no-anonymous-default-export-in-react
+// 3.axport the reducer
 export default (state = defaultState, action:LanguageActionTypes) => {
   // console.log(state,action);
   // switch is a fuction

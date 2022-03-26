@@ -1,13 +1,13 @@
-// export the defined  action import it in the languageReducer.ts file
+// 1.export the defined  action import it in the languageReducer.ts file, just a name defined, does not affect alot the code performance
 export const CHANGE_LANGUAGE = "change_language";
-export const ADD_LANGUAGE = "add_newLanguage";
+export const ADD_LANGUAGE = "add_language";
 
-// 2)interface AddLanguage type check
+// 2. interface AddLanguage type check
 interface ChangeLanguageAction {
   type: typeof CHANGE_LANGUAGE;
   payload: "zh" | "en";
 }
-// 5)export language actioncreator import it into the Header.tsx
+// 2.2 export language actioncreator import it into the Header.tsx
 export const changeLanguageActionCreator = (
   languageCode: "zh" | "en"
 ): ChangeLanguageAction => {// once you defined the interface, you need to use it in the fucntion
@@ -17,13 +17,13 @@ export const changeLanguageActionCreator = (
   };
 };
 
-// 2)interface AddLanguage type check
+// 3.interface AddLanguage type check
 interface AddLanguageAction {
   type: typeof ADD_LANGUAGE;
   payload: { name: string; code: string };
 }
 
-// 4)export addLanguage actioncreator and import it into the Header.tsx
+// 3.1 export addLanguage actioncreator and import it into the Header.tsx
 export const addLanguageActionCreator = (
   name: string,
   code: string
@@ -33,5 +33,5 @@ export const addLanguageActionCreator = (
     payload: { name, code },
   };
 };
-// 4)interface mix then import it into the language reducer file(types check)
+// 4.interface mix then import it into the language reducer file(types check)
 export type LanguageActionTypes = ChangeLanguageAction | AddLanguageAction;

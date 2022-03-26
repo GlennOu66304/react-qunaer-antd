@@ -32,9 +32,9 @@ export const Header: React.FC = () => {
   // const routeMatch = useRouteMatch();
   const { t } = useTranslation();
   // ge the state value by useSelector first
-  const language = useSelector((state) => state.language);
+  const language = useSelector((state) => state.language.language);
 
-  const languageList = useSelector((state) => state.languageList);
+  const languageList = useSelector((state) => state.language.languageList);
   // dispatch
   const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
 

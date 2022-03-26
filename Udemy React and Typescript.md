@@ -1,19 +1,13 @@
 ## Udemy React and Typescript
-goal: render the page based on the api response via the axios
-0.git new branch
-1.import the API file into the Postman
-2.aixos get the data:
-1)package install
-2)import the axios
-3)async componentDidMount = 
-4)await axios.get(), then()
-5)try catch
-3.loading issue fix:
-1)spin antd component
-2)loading if check
-3)
-4.error issue fix:
-5.error message
+
+
+
+
+
+## Goal2:React-thunk manage the aync and await
+1.move all the data into the store.ts
+## Goal3: React-thunk manage the action log
+1.log output
 
 
 ## axios react
@@ -36,8 +30,7 @@ Gmail
   2.react Admin(Reduex, need to go to the origianl project)
   [React_Admin](https://github.dev/GlennOu66304/react-admin)
   3.Linkedin(React Reduex)
-  4.React Typescribe
-
+  4.React Typescript
 ## A.extra webpack log output:
 Mainly caused by the react-script version, I tried npm run eject issue, tried to modify some changes in the webpack config, but that is way more complex for me. So I decided to downgrade my react-script version.
 Webpack: silence output
