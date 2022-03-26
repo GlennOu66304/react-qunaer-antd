@@ -6,6 +6,12 @@
 
 ## Goal2:React-thunk manage the aync and await
 1.move all the data into the store.ts
+2.redux, thunk package
+1)install
+3. redux thunk in the store.ts
+4. use it in the Hompage .tsx:
+1) mapdispatchtoProps
+2) componentDidMout
 ## Goal3: React-thunk manage the action log
 1.log output
 
