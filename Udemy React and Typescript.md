@@ -1,6 +1,8 @@
 ## Udemy React and Typescript
 Goal: give the big UI, also put the UI of the details contetn and date section
 
+## Todo list
+Single Page detials ---> login or log out ---> Payment system --> Deploy the site with Docker
 
 https://m.tb.cn/h.foVsBgk?sm=f4d2b6?tk=ndcY260512B
 ## React Hooks axios fetch the data(Function based Component)

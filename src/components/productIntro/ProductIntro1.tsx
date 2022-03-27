@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ProductIntro.module.css";
-import { Typography, Carousel, Image,Table,Rate } from "antd";
-import { ColumnsType } from 'antd/es/table'
+import { Typography, Carousel, Image, Table, Rate } from "antd";
+import { ColumnsType } from "antd/es/table";
 
 interface PropsType {
   title: string;
@@ -14,11 +14,11 @@ interface PropsType {
   picture: any;
 }
 // table data columns
-const columns1:ColumnsType<RowTypes> = [
+const columns1: ColumnsType<RowTypes> = [
   {
     title: "title",
     dataIndex: "title",
-    key:"title",
+    key: "title",
     align: "left",
     width: 120,
   },
@@ -28,15 +28,13 @@ const columns1:ColumnsType<RowTypes> = [
     key: "description",
     align: "center",
   },
-]
+];
 
-interface RowTypes{
-  title:string, 
-  description:string| number | JSX.Element,
-  key:number,
-  
+interface RowTypes {
+  title: string;
+  description: string | number | JSX.Element;
+  key: number;
 }
-
 
 export const ProductIntro: React.FC<PropsType> = ({
   title,
@@ -48,65 +46,62 @@ export const ProductIntro: React.FC<PropsType> = ({
   rating,
   picture,
 }) => {
-
+  // console.log(picture)
   // table datasource
-const data:RowTypes[] = [
+  const data: RowTypes[] = [
+    {
+      key: 0,
+      title: "路线名称",
+      description: title,
+    },
 
-  {
-    key: 0,
-    title: "路线名称",
-    description: title,
-  },
+    {
+      key: 1,
+      title: "价格",
+      description: (
+        <>
+          ¥{" "}
+          <Typography.Text type="danger" strong>
+            {price}
+          </Typography.Text>
+        </>
+      ),
+    },
 
-  {
-    key: 1,
-    title: "价格",
-    description: (
-      <>
-        ¥{" "}
-        <Typography.Text type="danger" strong>
-          {price}
-        </Typography.Text>
-      </>
-    ),
-  },
+    {
+      key: 2,
+      title: "限时抢购折扣",
+      description: discount ? (
+        <>
+          ¥ <Typography.Text delete>{price}</Typography.Text>{" "}
+          <Typography.Text type="danger" strong>
+            ¥ {discount}
+          </Typography.Text>
+        </>
+      ) : (
+        "暂无折扣"
+      ),
+    },
 
-  {
-    key: 2,
-    title: "限时抢购折扣",
-    description: discount ? (
-      <>
-        ¥ <Typography.Text delete>{price}</Typography.Text>{" "}
-        <Typography.Text type="danger" strong>
-          ¥ {discount}
-        </Typography.Text>
-      </>
-    ) : (
-      "暂无折扣"
-    ),
-  },
+    {
+      key: 3,
+      title: "领取优惠",
+      description: coupons ? discount : "无优惠券可领",
+    },
 
-  {
-    key: 3,
-    title: "领取优惠",
-    description: coupons ? discount : "无优惠券可领",
-  },
-
-  {
-    key: 4,
-    title: "线路评价",
-    description: (
-      <>
-        <Rate allowHalf defaultValue={+rating} />
-        <Typography.Text style={{ marginLeft: 10 }}>
-          {rating} 星
-        </Typography.Text>
-      </>
-    ),
-  },
-
-
-]
+    {
+      key: 4,
+      title: "线路评价",
+      description: (
+        <>
+          <Rate allowHalf defaultValue={+rating} />
+          <Typography.Text style={{ marginLeft: 10 }}>
+            {rating} 星
+          </Typography.Text>
+        </>
+      ),
+    },
+  ];
   // console.log(picture);
   return (
     // left page
@@ -129,12 +124,9 @@ const data:RowTypes[] = [
       </div>
       {/* carsuel */}
       <Carousel autoplay slidesToShow={3}>
-        {
-        picture.map((img) => (
-          <Image height={150} src={img} />
-          // console.log(img.url)
+        {picture.map((img) => (
+          <Image height={150} src={img} key={img}/>
         ))
-        
         }
       </Carousel>
 
@@ -143,7 +135,9 @@ const data:RowTypes[] = [
           2.prepare the columns array
           3.prepare the data source array
       */}
-      <Table columns={columns1} dataSource={data}
+      <Table
+        columns={columns1}
+        dataSource={data}
         size="small"
         bordered={false}
         pagination={false}
