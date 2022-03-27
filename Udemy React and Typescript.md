@@ -1,9 +1,6 @@
 ## Udemy React and Typescript
 
 
-
-
-
 ## Goal2:React-thunk manage the aync and await
 
 ## Goal3: React-thunk manage the action log
