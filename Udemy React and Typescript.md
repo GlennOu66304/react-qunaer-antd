@@ -1,20 +1,25 @@
 ## Udemy React and Typescript
 Goal: give the big UI, also put the UI of the details contetn and date section
- git new branch
- 
-I.Idetail page 6 parts UI content
-1.import the heading
-2.import the footer
-3.add the css
-4.6 parts code writing
-
-II.detail page and Date section No.1 section
-1.detail section(left)
-2.table section(left)
-3.date sectiom(right)
 
 
+https://m.tb.cn/h.foVsBgk?sm=f4d2b6?tk=ndcY260512B
+## React Hooks axios fetch the data(Function based Component)
+Social Media Project
+[Hooks Fetch Data](https://github.dev/GlennOu66304/Social_app),conversation.js file
+[Fetching data with React hooks and Axios](https://dev.to/darkmavis1980/fetching-data-with-react-hooks-and-axios-114h)  
+Gamil
+Linkined
+Restaurant
+Amazon Project
 
+## Class based component
+conscrutctor(props)
+super(props)
+this,state={
+
+}
+
+const getData = axios.get('http://localhost:9090/api').then()......
 ## axios react
 gtf
 social media sites
