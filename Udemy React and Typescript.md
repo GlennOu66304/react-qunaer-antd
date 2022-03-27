@@ -1,27 +1,14 @@
+## if you can not open the site
+
+then please do not comment the code in the action.log also keep 
+vpn on, (the image bed is S3, might use the oversea server). also you 
+can change the network to mobile data( might be the internet speed as well)
+
+
 ## Udemy React and Typescript
-Goal: give the big UI, also put the UI of the details contetn and date section
 
-## Todo list
-Single Page detials ---> login or log out ---> Payment system --> Deploy the site with Docker
 
-https://m.tb.cn/h.foVsBgk?sm=f4d2b6?tk=ndcY260512B
-## React Hooks axios fetch the data(Function based Component)
-Social Media Project
-[Hooks Fetch Data](https://github.dev/GlennOu66304/Social_app),conversation.js file
-[Fetching data with React hooks and Axios](https://dev.to/darkmavis1980/fetching-data-with-react-hooks-and-axios-114h)  
-Gamil
-Linkined
-Restaurant
-Amazon Project
 
-## Class based component
-conscrutctor(props)
-super(props)
-this,state={
-
-}
-
-const getData = axios.get('http://localhost:9090/api').then()......
 ## axios react
 gtf
 social media sites
