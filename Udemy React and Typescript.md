@@ -1,17 +1,18 @@
 ## Udemy React and Typescript
+Goal: give the big UI, also put the UI of the details contetn and date section
+ git new branch
+ 
+I.Idetail page 6 parts UI content
+1.import the heading
+2.import the footer
+3.add the css
+4.6 parts code writing
 
+II.detail page and Date section No.1 section
+1.detail section(left)
+2.table section(left)
+3.date sectiom(right)
 
-## Goal2:React-thunk manage the aync and await
-
-## Goal3: React-thunk manage the action log
-1.build a new folder middle:middleware
-2.actionlog.ts:
-1)import middleware from redux
-2)export action log
-3)console.log
-3.apply it in the store ts:
-1)import 
-2)add after the thunk
 
 
 ## axios react
