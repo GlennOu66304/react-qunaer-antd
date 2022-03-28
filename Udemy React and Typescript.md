@@ -7,6 +7,62 @@ can change the network to mobile data( might be the internet speed as well)
 
 ## Udemy React and Typescript
 
+Goal: reform the redux code
+
+git new branch 
+npm install the package
+1. Project rebuild:
+2. create redux
+## Redeux tookit
+1.Linkind lin start :
+1)1-3 in the store.js 
+2)slice in userslice.js
+3)real useage Feed.js
+[redux-toolkit](https://github.dev/GlennOu66304/Linkedin-clone)
+2.use it in the component:
+1)import the store
+```
+// 1.import the Hooks
+import React, {useEffect, useState} from 'react';
+// 2.import the aciton dispatxh and reducer selector
+import {useDispatch, useSelector} from 'react-redux';
+// 3. reducer import
+import {fetchText} from '@/store/demoReducer';
+// 4.store import
+import store, {StateType} from '@/store';
+
+//5.code start write
+export default function HomePage() {
+//5.1 define the initail value of dispatch and useSelector
+    const dispatch = useDispatch<typeof store.dispatch>();
+    
+	const content = useSelector((state: StateType) => ({
+		text: state.demo.text
+	}));
+	
+	
+	const getText = () => {
+	//5.2 dispatch the action 
+		return dispatch(fetchText()).then(res => {
+			console.log(res);
+		});
+	};
+	
+	// 6.Hooks use this function
+	useEffect(() => {
+		getText();
+	}, []);
+        ...
+}
+
+```
+
+[引入状态和派发action：](https://juejin.cn/post/7032663396160012295#heading-3)
+
+Linkind lin start 
+Typescript usage
+Oficial Doc
+
 
 
 ## axios react
