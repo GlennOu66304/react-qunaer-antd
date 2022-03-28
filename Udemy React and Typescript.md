@@ -7,8 +7,14 @@ can change the network to mobile data( might be the internet speed as well)
 
 ## Udemy React and Typescript
 
-Goal: reform the redux code
+Goal : Store section and data fetch issue fix(same like hompage.tsx)
 
+1.git new branch
+2.store issue fix:
+3.data issue fix:
+4.pending issue fix:
+5.extra reeducers
+5.redux dev tool fix
 
 
 2. create redux
