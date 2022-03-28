@@ -9,9 +9,8 @@ can change the network to mobile data( might be the internet speed as well)
 
 Goal: reform the redux code
 
-git new branch 
-npm install the package
-1. Project rebuild:
+
+
 2. create redux
 ## Redeux tookit
 1.Linkind lin start :

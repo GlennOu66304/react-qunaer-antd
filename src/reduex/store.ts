@@ -1,6 +1,6 @@
 // 1.import combinereducer
 
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import languageReducer from "./language/languageReducer";
 import recommendProductReducer from "./recommendation/recommendationReducer";
 // import the thunk first
@@ -8,10 +8,14 @@ import thunk from 'redux-thunk'
 // store value will be process by the reducer
 // 2.make root reducer 
 // import {actionLog} from './middleware/actionlog'
-
+// 4) import this reducer in the store section as well
+import {productDetailSlice} from "./productDetail/slice";
+import {combineReducers} from '@reduxjs/toolkit'
 const rootReducer = combineReducers({
     language:languageReducer,
-    recommendation:recommendProductReducer 
+    recommendation:recommendProductReducer,
+    // need to add the reducer after the slice name
+    productDetail: productDetailSlice.reducer
 })
 // 3.use it in the store
 

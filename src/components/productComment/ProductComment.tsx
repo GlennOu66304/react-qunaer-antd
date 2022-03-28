@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Comment, Tooltip } from "antd";
+import { List, Comment } from "antd";
 // import styles from './Product.module.css'
 interface propTypes {
   data: {

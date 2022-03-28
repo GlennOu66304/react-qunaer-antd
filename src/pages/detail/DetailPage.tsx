@@ -4,9 +4,14 @@ import styles from "./DetailPage.module.css";
 import { RouteComponentProps, useParams } from "react-router-dom";
 import { Header, Footer, ProductIntro, ProductComment } from "../../components";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Spin, Row, Col, DatePicker, Divider, Typography } from "antd";
 import { commentMockData } from "./mockup";
+// import the actions
+import { productDetailSlice } from "../../reduex/productDetail/slice";
+// impor the hooks
+import { useSelector } from "../../reduex/hooks";
+import { useDispatch } from "react-redux";
 // 4)interface prop types check
 interface MatchParams {
   touristRouteId: string;
@@ -26,24 +31,24 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
 
   const { touristRouteId } = useParams<MatchParams>();
   // loading, errors, productlist
-  const [loading, setLoading] = useState<boolean>(true); // like this.state in the class based component
-  const [error, setError] = useState<string | null>(null);
-  const [product, setProduct] = useState<any>(null);
+  const loading = useSelector((state) => state.productDetail.loading); // like this.state in the class based component
+  const error = useSelector((state) => state.productDetail.error);
+  const product = useSelector((state) => state.productDetail.data);
+  const dispatch = useDispatch();
   const { RangePicker } = DatePicker;
   useEffect(() => {
     //same like componentdidmout in class component
     //   fetch data function
     const fetchData = async () => {
-      setLoading(true);
+      dispatch(productDetailSlice.actions.fetchStart());
       try {
         const { data } = await axios.get(
           `http://123.56.149.216:8089/api/touristRoutes/${touristRouteId}`
         );
-        setProduct(data);
-        setLoading(false);
+        dispatch(productDetailSlice.actions.fetchSuccess(data));
         // console.log(data)
       } catch (error: any) {
-        setError(error.message);
+        dispatch(productDetailSlice.actions.fetchFail(error));
       }
     };
     // call back the function
@@ -143,7 +148,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
           </Divider>
 
           <div style={{ margin: 40 }}>
-            <ProductComment data={commentMockData}/>
+            <ProductComment data={commentMockData} />
           </div>
         </div>
       </div>
