@@ -6,26 +6,33 @@ can change the network to mobile data( might be the internet speed as well)
 
 
 ## Udemy React and Typescript
+Goal: make the search page UI and search function work
 
-Goal : Store section and data fetch issue fix(same like hompage.tsx)
+1.search UI:
+1)import Header, Footer, search filter componetn, search content component
+2)header ,footer, 
+3)search filter 
+4)search content
+5)index.ts, page export
+6)page route in the app.js fix
+7)connect it in the header search section(onSearch) 
 
-1.git new branch
-2.store issue fix:
-3.data issue fix:
-4.pending issue fix:
-5.extra reeducers
-5.redux dev tool fix
+2.search function:(similiar wiill productDetial Page)
+1).in the search slice add the createSlice,
+2).import this function in the SearchPage component,
+3).data transfer the into the search content
+sam as product details section
 
-
-2. create redux
 ## Redeux tookit
 1.Linkind lin start :
 1)1-3 in the store.js 
+[Store Build](https://juejin.cn/post/7032663396160012295#heading-3)
 2)slice in userslice.js
 3)real useage Feed.js
 [redux-toolkit](https://github.dev/GlennOu66304/Linkedin-clone)
 2.use it in the component:
 1)import the store
+
 ```
 // 1.import the Hooks
 import React, {useEffect, useState} from 'react';

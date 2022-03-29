@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./App.module.css";
 
-import { HomePage, SignUp, SignIn, DetailPage } from "./pages";
+import { HomePage, SignUp, SignIn, DetailPage,SearchPage } from "./pages";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -25,6 +25,8 @@ function App() {
           {/* DetailPage */}
           {/* restfule path:exact path="/detail/:paramas"   */}
           <Route path="/detail/:touristRouteId" component={DetailPage} />
+          {/* search section */}
+          <Route path="/search/:keyword?" component={SearchPage} />
           {/* 404 path */}
           <Route render={() => <h1>404 not fond 页面去火星了</h1>} />
         </Switch>

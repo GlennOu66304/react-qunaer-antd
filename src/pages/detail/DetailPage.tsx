@@ -3,12 +3,12 @@ import styles from "./DetailPage.module.css";
 // 3)RouteComponentProps react-rotuer-dom
 import { RouteComponentProps, useParams } from "react-router-dom";
 import { Header, Footer, ProductIntro, ProductComment } from "../../components";
-import axios from "axios";
+// import axios from "axios";
 import { useEffect } from "react";
 import { Spin, Row, Col, DatePicker, Divider, Typography } from "antd";
 import { commentMockData } from "./mockup";
 // import the actions
-import { productDetailSlice } from "../../reduex/productDetail/slice";
+import { giveMeProductDetails } from "../../reduex/productDetail/slice";
 // impor the hooks
 import { useSelector } from "../../reduex/hooks";
 import { useDispatch } from "react-redux";
@@ -40,16 +40,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
     //same like componentdidmout in class component
     //   fetch data function
     const fetchData = async () => {
-      dispatch(productDetailSlice.actions.fetchStart());
-      try {
-        const { data } = await axios.get(
-          `http://123.56.149.216:8089/api/touristRoutes/${touristRouteId}`
-        );
-        dispatch(productDetailSlice.actions.fetchSuccess(data));
-        // console.log(data)
-      } catch (error: any) {
-        dispatch(productDetailSlice.actions.fetchFail(error));
-      }
+     dispatch(giveMeProductDetails(touristRouteId))
     };
     // call back the function
     fetchData();
