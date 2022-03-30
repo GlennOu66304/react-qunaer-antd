@@ -6,22 +6,29 @@ can change the network to mobile data( might be the internet speed as well)
 
 
 ## Udemy React and Typescript
-Goal: make the search page UI and search function work
+### Goal: Account action: register, login, logout UI and function make
+git new branch
 
-1.search UI:
-1)import Header, Footer, search filter componetn, search content component
-2)header ,footer, 
-3)search filter 
-4)search content
-5)index.ts, page export
-6)page route in the app.js fix
-7)connect it in the header search section(onSearch) 
+I.UI build:
+1.Component UI make for the home page, productdetail page, search page:
+1) new component build
+2) use it in the home page,product Detail Page, serch page
+3) 
+2.Compoment UI make for the register page, login page:
+same as above
+3.register UI build:
+Form use
+4.login UI build:
+1)Form use
 
-2.search function:(similiar wiill productDetial Page)
-1).in the search slice add the createSlice,
-2).import this function in the SearchPage component,
-3).data transfer the into the search content
-sam as product details section
+git new branch
+
+II.Function build:
+3.register logic build
+4.login logic build
+5.logout logic build
+6.local storage logic build
+
 
 ## Redeux tookit
 1.Linkind lin start :
