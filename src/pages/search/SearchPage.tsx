@@ -1,6 +1,7 @@
 import styles from "./SearchPage.module.css";
 import React from "react";
-import { Header, Footer, FilterArea, ProductList } from "../../components";
+import { FilterArea, ProductList } from "../../components";
+import { MainLayout} from '../../layouts'
 import { useEffect } from "react";
 import { searchProduct } from "../../reduex/search/slice";
 import { useSelector } from "../../reduex/hooks";
@@ -70,12 +71,10 @@ export const SearchPage: React.FC = () => {
   }
 
   return (
-    <div className={styles["page-content"]}>
-      {/* Header */}
-      <Header />
-
-      {/* searchFilter */}
-      <div className={styles["product-list-container"]}>
+    
+   <MainLayout>
+       {/* searchFilter */}
+       <div className={styles["product-list-container"]}>
         <FilterArea />
       </div>
 
@@ -87,8 +86,9 @@ export const SearchPage: React.FC = () => {
           onPageChange={onPageChange}
         />
       </div>
-      {/* Footer */}
-      <Footer />
-    </div>
+   </MainLayout>
+
+    
+     
   );
 };

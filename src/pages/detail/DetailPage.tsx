@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./DetailPage.module.css";
 // 3)RouteComponentProps react-rotuer-dom
 import { RouteComponentProps, useParams } from "react-router-dom";
-import { Header, Footer, ProductIntro, ProductComment } from "../../components";
+import { ProductIntro, ProductComment } from "../../components";
+import { MainLayout } from "../../layouts";
 // import axios from "axios";
 import { useEffect } from "react";
 import { Spin, Row, Col, DatePicker, Divider, Typography } from "antd";
@@ -40,7 +41,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
     //same like componentdidmout in class component
     //   fetch data function
     const fetchData = async () => {
-     dispatch(giveMeProductDetails(touristRouteId))
+      dispatch(giveMeProductDetails(touristRouteId));
     };
     // call back the function
     fetchData();
@@ -70,11 +71,8 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
   }
 
   return (
-    <>
-      <Header />
-
-      {/* page conetent */}
-      <div className={styles["page-content"]}>
+   
+      <MainLayout>
         {/* 1.product details and date */}
         <div className={styles["product-intro-container"]}>
           <Row>
@@ -142,9 +140,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
             <ProductComment data={commentMockData} />
           </div>
         </div>
-      </div>
-
-      <Footer />
-    </>
+      </MainLayout>
+   
   );
 };

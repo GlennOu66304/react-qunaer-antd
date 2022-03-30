@@ -1,8 +1,14 @@
-import React from 'react'
+import React from "react";
 // import styles from './SignIn.module.css'
-
+import { UserLayout } from "../../layouts";
 export const SignIn: React.FC = () => {
-    return (
-        <h3> This is the login page</h3>
-    )
-}
+  return (
+
+      <UserLayout >
+        <h3>登录页面</h3>
+
+        </UserLayout>
+   
+
+  );
+};

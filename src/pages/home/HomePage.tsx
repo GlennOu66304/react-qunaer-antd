@@ -1,20 +1,19 @@
 import React from "react";
-import styles from "./HomePage.module.css";
+// import styles from "./HomePage.module.css";
 import {
-  Header,
-  Footer,
+  
   SideMenu,
   Carousel,
   ProductCollection,
   BusinessPartners,
 } from "../../components";
+import { MainLayout } from "../../layouts";
 
 import { Row, Col, Typography, Spin } from "antd";
 
 // a. Mock Up data for the whole project :data import : this is from the mockup.tsx under the src folder and
 // export it into the App.tsx
 // import { productList1, productList2, productList3 } from "./mockups";
-
 
 // import { withRouter,RouteComponentProps } from "react-router-dom";
 import "../../i18n/configs";
@@ -27,9 +26,8 @@ import SideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 import { connect } from "react-redux";
 
 import { RootState } from "../../reduex/store";
-import {
-  giveMeDataActionCreator
-} from "../../reduex/recommendation/recommendationActions";
+import { giveMeDataActionCreator } from "../../reduex/recommendation/recommendationActions";
+
 const mapStateToProps = (state: RootState) => {
   return {
     productList: state.recommendation.productList,
@@ -41,10 +39,10 @@ const mapStateToProps = (state: RootState) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     // fetchStart name there is no relationship with recommnendationAction.ts, this is a function name, will be used in the constructor
-// in the componentDidMount function as a function name to call back, then trigger the action creator, and process the reducer
-      giveMeData:() => {
-        dispatch(giveMeDataActionCreator())
-      }
+    // in the componentDidMount function as a function name to call back, then trigger the action creator, and process the reducer
+    giveMeData: () => {
+      dispatch(giveMeDataActionCreator());
+    },
   };
 };
 
@@ -57,7 +55,6 @@ type PropsType = WithTranslation &
 class HomePageComponent extends React.Component<PropsType> {
   async componentDidMount() {
     this.props.giveMeData();
-   
   }
 
   render() {
@@ -83,10 +80,8 @@ class HomePageComponent extends React.Component<PropsType> {
     }
 
     return (
-      <>
-        <Header />
-        {/* content */}
-        <div className={styles["page-content"]}>
+      
+        <MainLayout>
           <Row style={{ marginTop: 20 }}>
             <Col span={6}>
               <SideMenu />
@@ -137,14 +132,11 @@ class HomePageComponent extends React.Component<PropsType> {
             sideImage={SideImage3}
             products={this.props.productList[2].touristRoutes}
           />
-        </div>
 
-        {/* BusinessPartners */}
-        <BusinessPartners />
-
-        {/* footer */}
-        <Footer />
-      </>
+          {/* BusinessPartners */}
+          <BusinessPartners />
+        </MainLayout>
+    
     );
   }
 }
