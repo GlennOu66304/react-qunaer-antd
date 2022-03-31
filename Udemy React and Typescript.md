@@ -1,3 +1,6 @@
+
+
+
 ## if you can not open the site
 
 then please do not comment the code in the action.log also keep 
@@ -17,6 +20,10 @@ I.UI build:
 2.Compoment UI make for the register page, login page:
 same as above
 3.register UI build:
+1) antd form import use
+2) css fix
+3) confirm password use
+4) rules change
 Form use
 4.login UI build:
 1)Form use
