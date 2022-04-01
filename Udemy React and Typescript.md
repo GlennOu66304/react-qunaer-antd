@@ -25,6 +25,7 @@ same as above
 3) confirm password use
 4) rules change
 Form use
+
 4.login UI build:
 1)Form use
 
@@ -32,9 +33,23 @@ git new branch
 
 II.Function build:
 3.register logic build
-4.login logic build
+
+0.Split the regiet page between register page and register form
+1) the api usage 
+MVC structure
+1.failed success
+2) retouer to the login page
+
+4.login logic build:
+1)Redux State usage
+
+Base one the if there is a token is sent from the backend api to decide login success or failed,
+success will retrouter to the home page
+
 5.logout logic build
 6.local storage logic build
+
+
 
 
 ## Redeux tookit

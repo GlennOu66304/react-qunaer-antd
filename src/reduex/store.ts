@@ -11,6 +11,7 @@ import recommendProductReducer from "./recommendation/recommendationReducer";
 // 4) import this reducer in the store section as well
 import { productDetailSlice } from "./productDetail/slice";
 import { productSearchSlice } from "./search/slice";
+import { signInSlice } from "./user/slice";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 const rootReducer = combineReducers({
   language: languageReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   // need to add the reducer after the slice name
   productDetail: productDetailSlice.reducer,
   productSearch: productSearchSlice.reducer,
+  signIn: signInSlice.reducer
 });
 // 3.use it in the store
 
