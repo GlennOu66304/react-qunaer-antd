@@ -3,8 +3,8 @@ import React from "react";
 import { FilterArea, ProductList } from "../../components";
 import { MainLayout} from '../../layouts'
 import { useEffect } from "react";
-import { searchProduct } from "../../reduex/search/slice";
-import { useSelector } from "../../reduex/hooks";
+import { searchProduct } from "../../redux/search/slice";
+import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import { useParams, useLocation } from "react-router-dom";
 import { Spin } from "antd";

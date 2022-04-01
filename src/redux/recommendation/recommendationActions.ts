@@ -1,5 +1,5 @@
 import { ThunkAction } from "redux-thunk";
-import { RootState } from "../../reduex/store";
+import { RootState } from "../store";
 import axios from "axios";
 
 export const FETCH_RECOMMEND_PRODUCTS_START = "FETCH_RECOMMEND_PRODUCTS_START";

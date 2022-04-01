@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-interface SignInStates {
-  data: any;
+interface UserStates {
+ 
   loading: boolean;
   error: string | null;
   token: string | null;
 }
 
-const initialState: SignInStates = {
-  data: null,
+const initialState: UserStates = {
+
   loading: false,
   error: null,
   token: null,
@@ -31,11 +31,17 @@ export const signIn = createAsyncThunk(
     return data;
   }
 );
-export const signInSlice = createSlice({
-  name: "signIn",
+export const userSlice = createSlice({
+  name: "user",
   initialState,
 
-  reducers: {},
+  reducers: {
+    logOut: (state) => {
+      state.token = null;
+      state.error = null;
+      state.loading = false;
+    },
+  },
 
   extraReducers: {
     // function as reducers object content

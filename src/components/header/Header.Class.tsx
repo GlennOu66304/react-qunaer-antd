@@ -15,13 +15,13 @@ import { withRouter, RouteComponentProps } from "react-router-dom";
 
 // class project cleaning:Header.Class.tsx: original option and Class option: HOC option( initail, it is the Hooks option, and change it to the HOC option)
 // use it in the header.tsx
-import { RootState } from "../../reduex/store";
+import { RootState } from "../../redux/store";
 
 // 1)import the actionCreator from the actions;
 import {
   changeLanguageActionCreator,
   addLanguageActionCreator,
-} from "../../reduex/language/languageActions";
+} from "../../redux/language/languageActions";
 import "../../i18n/configs";
 import { withTranslation, WithTranslation } from "react-i18next";
 

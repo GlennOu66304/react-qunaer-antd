@@ -25,8 +25,8 @@ import SideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 
 import { connect } from "react-redux";
 
-import { RootState } from "../../reduex/store";
-import { giveMeDataActionCreator } from "../../reduex/recommendation/recommendationActions";
+import { RootState } from "../../redux/store";
+import { giveMeDataActionCreator } from "../../redux/recommendation/recommendationActions";
 
 const mapStateToProps = (state: RootState) => {
   return {

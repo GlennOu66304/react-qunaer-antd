@@ -1,19 +1,24 @@
 import React from "react";
 import styles from "./SignIn.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
-import { useSelector } from "../../reduex/hooks";
+import { useSelector } from "../../redux/hooks";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom"; //reouter to the hom page
-import { signIn } from "../../reduex/user/slice";
+import { signIn } from "../../redux/user/slice";
 export const SignInForm: React.FC = () => {
   // first get the state,
-  const loading = useSelector((state) => state.signIn.loading);
-  const jwt = useSelector((state) => state.signIn.token);
-  const error = useSelector((state) => state.signIn.error);
+  const loading = useSelector((state) => state.user.loading);
+  const jwt = useSelector((state) => state.user.token);
+  const error = useSelector((state) => state.user.error);
   const history = useHistory();
   const dispatch = useDispatch();
   // then fetch the data from the useEfect
+
+
+
+//   Base one the if there is a token is sent from the backend api to decide login success or failed,
+// success will retrouter to the home page
 
   // useEffect contains a function and a call back, and return something
   useEffect(() => {

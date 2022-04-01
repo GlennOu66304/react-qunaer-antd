@@ -13,7 +13,7 @@ import App from './App';
 // 3)ts.config.json
 // import 'antd/dist/antd.css';
 
-import store from './reduex/store'
+import store from './redux/store'
 import {Provider} from 'react-redux'
 
 ReactDOM.render(

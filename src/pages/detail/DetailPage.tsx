@@ -9,9 +9,9 @@ import { useEffect } from "react";
 import { Spin, Row, Col, DatePicker, Divider, Typography } from "antd";
 import { commentMockData } from "./mockup";
 // import the actions
-import { giveMeProductDetails } from "../../reduex/productDetail/slice";
+import { giveMeProductDetails } from "../../redux/productDetail/slice";
 // impor the hooks
-import { useSelector } from "../../reduex/hooks";
+import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 // 4)interface prop types check
 interface MatchParams {

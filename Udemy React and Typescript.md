@@ -43,10 +43,15 @@ MVC structure
 4.login logic build:
 1)Redux State usage
 
-Base one the if there is a token is sent from the backend api to decide login success or failed,
-success will retrouter to the home page
 
-5.logout logic build
+5.logout logic build:
+0)Head Component:
+1)translation
+1) log out UI: decode the token, then acees the email conten
+2) an shooping cart
+3) login UI and log out UI switch(sanyuan)
+4) logout logic will be like:
+update the token value to the null, that will trigger the action to the normal UI
 6.local storage logic build
 
 
