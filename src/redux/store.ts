@@ -13,6 +13,16 @@ import { productDetailSlice } from "./productDetail/slice";
 import { productSearchSlice } from "./search/slice";
 import { userSlice } from "./user/slice";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import {persistStore, persistReducer} from 'redux-persist'
+
+import storage from "redux-persist/lib/storage"
+
+const persistConfig={
+  key:"root",
+  storage,
+  whitelist:["user"]
+}
+
 const rootReducer = combineReducers({
   language: languageReducer,
   recommendation: recommendProductReducer,
@@ -26,13 +36,17 @@ const rootReducer = combineReducers({
 // const store = createStore(rootReducer,applyMiddleware(thunk,actionLog));//add the middle ware thunk
 // const store = createStore(rootReducer,applyMiddleware(thunk));//add the middle ware thunk
 
+const persistedReducer = persistReducer(persistConfig,rootReducer)
+
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware()],
   devTools: true, //enable the redux dev tool
 });
 
+const persistor = persistStore(store)
+
 //3.Root State in the store.ts
 export type RootState = ReturnType<typeof store.getState>;
 
-export default store;
+export default {store,persistor};

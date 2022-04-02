@@ -21,7 +21,10 @@
         "high_end":"高端游",
         "outdoor":"爱玩户外",
         "insurance":"保险",
-        "welcome":"欢迎回来"
+        "welcome":"欢迎回来",
+        "shoppingCart":"购买",
+        "signOut":"登出"
+
     },
     "footer": {
         "detail" : "版权所有 @ React 旅游网"

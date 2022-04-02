@@ -45,6 +45,14 @@ export const Header: React.FC = () => {
   // dispatch
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    if (jwt) {
+      const token = jwt_decode<JwtPayload>(jwt);
+      setUsername(token.username);
+    }
+  }, [jwt]);
+
   const menuClickHandler = (e) => {
     if (e.key === "New") {
       // this.props.addlanguage("新语言", "new");
@@ -55,12 +63,7 @@ export const Header: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    if (jwt) {
-      const token = jwt_decode<JwtPayload>(jwt);
-      setUsername(token.username);
-    }
-  }, [jwt]);
+  
 
   const onLogout = () => {
     dispatch(userSlice.actions.logOut());
@@ -98,8 +101,8 @@ export const Header: React.FC = () => {
             <Button.Group className={styles["button-group"]}>
               <span> {t("header.welcome")}</span>
               <Typography.Text strong>{username}</Typography.Text>
-              <Button onClick={onLogout}>{t("header.shoppingCart")}</Button>
-              <Button>{t("header.signOut")}</Button>
+              <Button >{t("header.shoppingCart")}</Button>
+              <Button onClick={onLogout}>{t("header.signOut")}</Button>
             </Button.Group>
           ) : (
             <Button.Group className={styles["button-group"]}>

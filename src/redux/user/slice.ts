@@ -28,7 +28,7 @@ export const signIn = createAsyncThunk(
       email: paramaters.email,
       password: paramaters.password,
     });
-    return data;
+    return data.token;// return must be token,otherwise will cause token invalid
   }
 );
 export const userSlice = createSlice({

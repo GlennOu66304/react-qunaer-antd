@@ -13,12 +13,15 @@ import App from './App';
 // 3)ts.config.json
 // import 'antd/dist/antd.css';
 
-import store from './redux/store'
+import rootStore from './redux/store'
 import {Provider} from 'react-redux'
-
+import {PersistGate} from 'redux-persist/integration/react'
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={rootStore.store}>
+    <PersistGate persistor={rootStore.persistor}>
     <App />
+    </PersistGate>
+   
   </Provider>,
   document.getElementById('root')
 );
