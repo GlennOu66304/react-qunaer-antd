@@ -1,5 +1,22 @@
+## Project build starter build: a branch
 
+1.Project----> Optimized start ---> Repo
 
+React + Typescript + Antd
+React + Antd
+React + Material 
+MERN Start
+MEVN start
+Vue Start
+Boostrap start
+Node Rest Ful API
+Java API
+
+2.A readme.md make a collection
+
+3.Feature will go back the  specific project to check out
+
+如果你们就骗钱的话，那么就拿这个钱买棺材本，这68块钱按就算喂狗了，艹，坑爹
 
 ## if you can not open the site
 
@@ -9,54 +26,49 @@ can change the network to mobile data( might be the internet speed as well)
 
 
 ## Udemy React and Typescript
-### Goal: Account action: register, login, logout UI and function make
-git new branch
+### Goal:
+1.place order UI
+2.place order slice(redux tookit)
 
 I.UI build:
-1.Component UI make for the home page, productdetail page, search page:
-1) new component build
-2) use it in the home page,product Detail Page, serch page
-3) 
-2.Compoment UI make for the register page, login page:
-same as above
-3.register UI build:
-1) antd form import use
-2) css fix
-3) confirm password use
-4) rules change
-Form use
+1.place order page build
+2.privatter router usage
+3.react credit card usae
+4.two columns:credit card section
+5.payment sections
 
-4.login UI build:
-1)Form use
-
-git new branch
-
-II.Function build:
-3.register logic build
-
-0.Split the regiet page between register page and register form
-1) the api usage 
-MVC structure
-1.failed success
-2) retouer to the login page
-
-4.login logic build:
-1)Redux State usage
-
-
-5.logout logic build:
-0)Head Component:
-1)translation
-1) log out UI: decode the token, then acees the email conten
-2) an shooping cart
-3) login UI and log out UI switch(sanyuan)
-4) logout logic will be like:
-update the token value to the null, that will trigger the action to the normal UI
-6.local storage logic build
+II function buid
+1,order slice build;
+2.place order api
+3.use the checkout slice in the order slice as well
 
 
 
 
+Goal: 
+
+1.Header show the number of the purchased item
+2.details page can show the add or delet the item option above the date section
+3.the shopping Cart section will show the item purchased and total number, total price
+
+I.Shopping Cart Page:UI
+1.Main Layout
+2.ProductList Component
+3.Price and total number component
+4.Header number of the item 
+5.details page shopping cart option
+
+II.Reduex section
+1.slice page buid（Product Deail)
+2.import it to the store section
+3.search function
+1)function
+2)slice section change
+3)interface change
+4)data change to the items
+4.add function
+5.delete function
+6.
 ## Redeux tookit
 1.Linkind lin start :
 1)1-3 in the store.js 

@@ -63,8 +63,6 @@ export const Header: React.FC = () => {
     }
   };
 
-  
-
   const onLogout = () => {
     dispatch(userSlice.actions.logOut());
     history.push("/");
@@ -101,7 +99,12 @@ export const Header: React.FC = () => {
             <Button.Group className={styles["button-group"]}>
               <span> {t("header.welcome")}</span>
               <Typography.Text strong>{username}</Typography.Text>
-              <Button >{t("header.shoppingCart")}</Button>
+
+              <Button onClick={() => history.push("/shoppingCart")}>
+             
+                {t("header.shoppingCart")}
+              </Button>
+
               <Button onClick={onLogout}>{t("header.signOut")}</Button>
             </Button.Group>
           ) : (
