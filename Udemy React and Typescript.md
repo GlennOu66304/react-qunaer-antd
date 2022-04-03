@@ -47,9 +47,9 @@ II function buid
 
 Goal: 
 
-1.Header show the number of the purchased item
-2.details page can show the add or delet the item option above the date section
-3.the shopping Cart section will show the item purchased and total number, total price
+1.Header show the number of the purchased item(api get)
+2.details page can show the add or delet the item option above the date section(add and delete)
+3.the shopping Cart section will show the item purchased and total number, total price(get)
 
 I.Shopping Cart Page:UI
 1.Main Layout
@@ -59,7 +59,7 @@ I.Shopping Cart Page:UI
 5.details page shopping cart option
 
 II.Reduex section
-1.slice page buid（Product Deail)
+1.slice page buid（Product Deail) get 
 2.import it to the store section
 3.search function
 1)function

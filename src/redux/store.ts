@@ -12,6 +12,7 @@ import recommendProductReducer from "./recommendation/recommendationReducer";
 import { productDetailSlice } from "./productDetail/slice";
 import { productSearchSlice } from "./search/slice";
 import { userSlice } from "./user/slice";
+import {shoppingCartSlice} from './shoppingCart/slice'
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {persistStore, persistReducer} from 'redux-persist'
 
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
   // need to add the reducer after the slice name
   productDetail: productDetailSlice.reducer,
   productSearch: productSearchSlice.reducer,
-  user: userSlice.reducer
+  user: userSlice.reducer,
+  shoppingCart:shoppingCartSlice.reducer
 });
 // 3.use it in the store
 

@@ -14,8 +14,12 @@ import {
 import { BrowserRouter, Route, Switch,Redirect } from "react-router-dom";
 
 import { useSelector } from "./redux/hooks"; 
+import {getShopingCartItem} from './redux/shoppingCart/slice'
+import{useEffect} from 'react'
+import {useDispatch} from "react-redux"
 
 const PrivateRoute = ({ component, isAuthenticated, ...rest }) => {
+
   const routeComponent = (props) => {
     return isAuthenticated ? (
       React.createElement(component, props)
@@ -26,9 +30,18 @@ const PrivateRoute = ({ component, isAuthenticated, ...rest }) => {
   return <Route render={routeComponent} {...rest} />;
 };
 
+
+
 function App() {
   const jwt = useSelector((state) => state.user.token)
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    if(jwt){
+      dispatch(getShopingCartItem(jwt));
+    }
+   
+  },[jwt])
   return (
     // 3.html part:
     <div className={styles.App}>
