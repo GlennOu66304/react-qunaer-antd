@@ -33,13 +33,13 @@ export const getShopingCartItem = createAsyncThunk(
 
       {
         headers: {
-          Authorization: `bearer ${jwt}`
-        }
+          Authorization: `bearer ${jwt}`,
+        },
       }
-    )
+    );
     return data.shoppingCartItems;
   }
-)
+);
 
 //add
 
@@ -79,7 +79,9 @@ export const clearShopingCartItem = createAsyncThunk(
     thunkAPI
   ) => {
     return await axios.delete(
-      `http://123.56.149.216:8089/api/shoppingCart/items/(${paramaters.itemIds.join(",")})`,
+      `http://123.56.149.216:8089/api/shoppingCart/items/(${paramaters.itemIds.join(
+        ","
+      )})`,
 
       {
         headers: {
@@ -87,6 +89,25 @@ export const clearShopingCartItem = createAsyncThunk(
         },
       }
     );
+  }
+);
+
+//check out
+export const checkout = createAsyncThunk(
+  "shoppingCart/checkout",
+
+  async (jwt: string, thunkAPI) => {
+    const {data} = await axios.post(
+      "http://123.56.149.216:8089/api/shoppingCart/checkout",
+      null,
+
+      {
+        headers: {
+          Authorization: `bearer ${jwt}`,
+        },
+      }
+    );
+    return data;
   }
 );
 
@@ -141,27 +162,65 @@ export const shoppingCartSlice = createSlice({
 
     // pending
     [clearShopingCartItem.pending.type]: (state) => {
-        state.loading = true;
-      },
-  
-      // fulfilled
-      [clearShopingCartItem.fulfilled.type]: (state) => {
-        state.loading =false;
-        state.items = [];
-        state.error = null;
-      },
-      // rejected
-  
-      [clearShopingCartItem.rejected.type]: (
-        state,
-        action: PayloadAction<string | null>
-      ) => {
-        state.loading = false;
-        state.error = action.payload;
-      },
+      state.loading = true;
+    },
 
+    // fulfilled
+    [clearShopingCartItem.fulfilled.type]: (state) => {
+      state.loading = false;
+      state.items = [];
+      state.error = null;
+    },
+    // rejected
 
+    [clearShopingCartItem.rejected.type]: (
+      state,
+      action: PayloadAction<string | null>
+    ) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
 
+    // pending
+    [checkout.pending.type]: (state) => {
+      state.loading = true;
+    },
 
+    // fulfilled
+    [checkout.fulfilled.type]: (state) => {
+      state.loading = false;
+      state.items = [];
+      state.error = null;
+    },
+    // rejected
+
+    [checkout.rejected.type]: (state, action: PayloadAction<string | null>) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
   },
 });
+
+// Goal:
+
+// 1.Header show the number of the purchased item(api get)
+// 2.details page can show the add or delet the item option above the date section(add and delete)
+// 3.the shopping Cart section will show the item purchased and total number, total price(get)
+
+// I.Shopping Cart Page:UI
+// 1.Main Layout
+// 2.ProductList Component
+// 3.Price and total number component
+// 4.Header number of the item
+// 5.details page shopping cart option
+
+// II.Reduex section
+// 1.slice page buid（Product Deail) get
+// 2.import it to the store section
+// 3.search function
+// 1)function
+// 2)slice section change
+// 3)interface change
+// 4)data change to the items
+// 4.add function
+// 5.delete function

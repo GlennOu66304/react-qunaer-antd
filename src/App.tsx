@@ -9,6 +9,7 @@ import {
   DetailPage,
   SearchPage,
   ShoppingCart,
+  PlaceOrder
 } from "./pages";
 
 import { BrowserRouter, Route, Switch,Redirect } from "react-router-dom";
@@ -67,9 +68,13 @@ function App() {
             path="/shoppingCart"
             component={ShoppingCart}
           />
-
+             <PrivateRoute
+            isAuthenticated={jwt}
+            path="/placeorder"
+            component={PlaceOrder}
+          />
           {/* 404 path */}
-          <Route render={() => <h1>404 not fond 页面去火星了</h1>} />
+          <Route render={() => <h1>404 not found 页面去火星了</h1>} />
         </Switch>
       </BrowserRouter>
     </div>

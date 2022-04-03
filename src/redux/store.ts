@@ -13,6 +13,7 @@ import { productDetailSlice } from "./productDetail/slice";
 import { productSearchSlice } from "./search/slice";
 import { userSlice } from "./user/slice";
 import {shoppingCartSlice} from './shoppingCart/slice'
+import {placeOrderSlice} from './placeOrder/slice'
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {persistStore, persistReducer} from 'redux-persist'
 
@@ -31,7 +32,8 @@ const rootReducer = combineReducers({
   productDetail: productDetailSlice.reducer,
   productSearch: productSearchSlice.reducer,
   user: userSlice.reducer,
-  shoppingCart:shoppingCartSlice.reducer
+  shoppingCart:shoppingCartSlice.reducer,
+ order: placeOrderSlice.reducer,
 });
 // 3.use it in the store
 

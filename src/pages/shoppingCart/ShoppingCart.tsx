@@ -5,13 +5,16 @@ import { ProductList, PaymentCard } from "../../components";
 import { Row, Col, Affix } from "antd";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
-import { clearShopingCartItem } from "../../redux/shoppingCart/slice";
+import { clearShopingCartItem, checkout } from "../../redux/shoppingCart/slice";
+import { useHistory } from "react-router-dom";
 
 export const ShoppingCart: React.FC = () => {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items);
   const jwt = useSelector((state) => state.user.token) as string;
   const loading = useSelector((state) => state.shoppingCart.loading);
   const dispatch = useDispatch();
+  const history = useHistory();
+
   return (
     <MainLayout>
       <Row>
@@ -45,7 +48,13 @@ export const ShoppingCart: React.FC = () => {
                     })
                   );
                 }}
-                onCheckout={() => {}}
+                onCheckout={() => {
+                  if (shoppingCartItems.length <= 0) {
+                    return;
+                  }
+                  dispatch(checkout(jwt))
+                  history.push("/placeorder");
+                }}
               />
             </div>
           </Affix>
