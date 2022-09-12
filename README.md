@@ -163,10 +163,10 @@ API is on the chapter 64
 2.React Admin:react admin
 
 ## typescript
-1.Video Nest+typescript
-2.React + typescript
-3.Learning(github)
-4.udemy typescript free course 阿莱克斯 Liu
+1.Video Nest+typescript   
+2.React + typescript   
+3.Learning(github)   
+4.udemy typescript free course 阿莱克斯 Liu   
 
 
 
