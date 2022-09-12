@@ -44,10 +44,6 @@ II function buid
 3.use the checkout slice in the order slice as well
 
 
-
-
-
-
 ## Redeux tookit
 1.Linkind lin start :
 1)1-3 in the store.js 
@@ -103,26 +99,27 @@ Oficial Doc
 
 
 ## axios react
-gtf
-social media sites
-react admin
-Linkinedin
-project list
-restaurant review (axios)
-amazon
-Gmail
+gtf  
+social media sites   
+react admin  
+Linkinedin  
+project list   
+restaurant review (axios)   
+amazon   
+Gmail   
 
 
 
 ## Change the language
-3.reducer file update: language api use
- ## Redux:
-  github
-  1.React Didi(React Reduex)
-  2.react Admin(Reduex, need to go to the origianl project)
-  [React_Admin](https://github.dev/GlennOu66304/react-admin)
-  3.Linkedin(React Reduex)
-  4.React Typescript
+3.reducer file update: language api use   
+
+## Redux:  
+  github  
+  1.React Didi(React Reduex)  
+  2.react Admin(Reduex, need to go to the origianl project)  
+  [React_Admin](https://github.dev/GlennOu66304/react-admin)  
+  3.Linkedin(React Reduex) 
+  4.React Typescript   
 ## A.extra webpack log output:
 Mainly caused by the react-script version, I tried npm run eject issue, tried to modify some changes in the webpack config, but that is way more complex for me. So I decided to downgrade my react-script version.
 Webpack: silence output
