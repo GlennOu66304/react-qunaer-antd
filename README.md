@@ -16,7 +16,7 @@ Java API
 
 3.Feature will go back the  specific project to check out
 
-如果你们就骗钱的话，那么就拿这个钱买棺材本，这68块钱按就算喂狗了，艹，坑爹
+
 
 ## if you can not open the site
 
