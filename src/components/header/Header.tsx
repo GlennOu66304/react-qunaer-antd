@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items)
-  const shoppingCartLoading = useSelector((state) => state.shoppingCart.loading)
+  // const shoppingCartLoading = useSelector((state) => state.shoppingCart.loading)
   
   useEffect(() => {
     if (jwt) {

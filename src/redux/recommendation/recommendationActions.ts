@@ -58,7 +58,7 @@ export const giveMeDataActionCreator =
     dispatch(FetchRecommendProductStartActionCreator());
     try {
       const { data } = await axios.get(
-        "http://123.56.149.216:8089/api/productCollections"
+        `${process.env.REACT_APP_API}/api/productCollections`
       );
       dispatch(FetchRecommendProductSuccessActionCreator(data));
       // console.log(this.state.productList);

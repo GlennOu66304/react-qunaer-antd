@@ -12,12 +12,12 @@ import {
   PlaceOrder
 } from "./pages";
 
-import { BrowserRouter, Route, Switch,Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import { useSelector } from "./redux/hooks"; 
-import {getShopingCartItem} from './redux/shoppingCart/slice'
-import{useEffect} from 'react'
-import {useDispatch} from "react-redux"
+import { useSelector } from "./redux/hooks";
+import { getShopingCartItem } from './redux/shoppingCart/slice'
+import { useEffect } from 'react'
+import { useDispatch } from "react-redux"
 
 const PrivateRoute = ({ component, isAuthenticated, ...rest }) => {
 
@@ -38,11 +38,13 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(jwt){
-      dispatch(getShopingCartItem(jwt));
+
+    if (jwt) {
+     dispatch(getShopingCartItem(jwt));
     }
-   
-  },[jwt])
+
+  }, [dispatch,jwt])
+
   return (
     // 3.html part:
     <div className={styles.App}>
@@ -68,7 +70,7 @@ function App() {
             path="/shoppingCart"
             component={ShoppingCart}
           />
-             <PrivateRoute
+          <PrivateRoute
             isAuthenticated={jwt}
             path="/placeorder"
             component={PlaceOrder}

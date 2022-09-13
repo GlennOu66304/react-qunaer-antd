@@ -29,7 +29,7 @@ export const getShopingCartItem = createAsyncThunk(
 
   async (jwt: string, thunkAPI) => {
     const { data } = await axios.get(
-      `http://123.56.149.216:8089/api/shoppingCart`,
+      `${process.env.REACT_APP_API}/api/shoppingCart`,
 
       {
         headers: {
@@ -54,7 +54,7 @@ export const addShopingCartItem = createAsyncThunk(
     thunkAPI
   ) => {
     const { data } = await axios.post(
-      `http://123.56.149.216:8089/api/shoppingCart/items`,
+      `${process.env.REACT_APP_API}/api/shoppingCart/items`,
       { touristRouteId: paramaters.touristRouteId },
       {
         headers: {
@@ -79,7 +79,7 @@ export const clearShopingCartItem = createAsyncThunk(
     thunkAPI
   ) => {
     return await axios.delete(
-      `http://123.56.149.216:8089/api/shoppingCart/items/(${paramaters.itemIds.join(
+      `${process.env.REACT_APP_API}/api/shoppingCart/items/(${paramaters.itemIds.join(
         ","
       )})`,
 
@@ -98,7 +98,7 @@ export const checkout = createAsyncThunk(
 
   async (jwt: string, thunkAPI) => {
     const {data} = await axios.post(
-      "http://123.56.149.216:8089/api/shoppingCart/checkout",
+      `${process.env.REACT_APP_API}/api/shoppingCart/checkout`,
       null,
 
       {

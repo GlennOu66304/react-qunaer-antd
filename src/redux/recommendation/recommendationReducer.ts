@@ -21,7 +21,7 @@ const defaultState: recommendationState = {
 };
 
 //3. return this reducer
-export default (state = defaultState, action: RecommendProductActionTypes) => {
+ const recommendProductReducer = (state = defaultState, action: RecommendProductActionTypes) => {
   switch (action.type) {
     case FETCH_RECOMMEND_PRODUCTS_START: {
       return { ...state, loading: true };
@@ -37,3 +37,5 @@ export default (state = defaultState, action: RecommendProductActionTypes) => {
       return state;
   }
 };
+
+export default recommendProductReducer

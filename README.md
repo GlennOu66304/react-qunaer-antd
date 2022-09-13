@@ -1,3 +1,11 @@
+
+
+[How to fix missing dependency warning when using useEffect React Hook](https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook)
+
+[React Hook useEffect has a missing dependency error](https://bobbyhadz.com/blog/react-hook-useeffect-has-missing-dependency#:~:text=Conclusion%20%23,variable%20inside%20the%20useEffect%20hook.)
+
+
+
 ## Project build starter build: a branch
 
 1.Project----> Optimized start ---> Repo

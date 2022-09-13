@@ -38,7 +38,7 @@ export const SearchPage: React.FC = () => {
     // call back the function
     fetchData();
     // return something
-  }, [location]);
+  }, [dispatch,keyword,location]);
 
   //   checked the outputed value
   // console.log(product)

@@ -12,17 +12,17 @@ import recommendProductReducer from "./recommendation/recommendationReducer";
 import { productDetailSlice } from "./productDetail/slice";
 import { productSearchSlice } from "./search/slice";
 import { userSlice } from "./user/slice";
-import {shoppingCartSlice} from './shoppingCart/slice'
-import {placeOrderSlice} from './placeOrder/slice'
+import { shoppingCartSlice } from './shoppingCart/slice'
+import { placeOrderSlice } from './placeOrder/slice'
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import {persistStore, persistReducer} from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist'
 
 import storage from "redux-persist/lib/storage"
 
-const persistConfig={
-  key:"root",
+const persistConfig = {
+  key: "root",
   storage,
-  whitelist:["user"]
+  whitelist: ["user"]
 }
 
 const rootReducer = combineReducers({
@@ -32,15 +32,15 @@ const rootReducer = combineReducers({
   productDetail: productDetailSlice.reducer,
   productSearch: productSearchSlice.reducer,
   user: userSlice.reducer,
-  shoppingCart:shoppingCartSlice.reducer,
- order: placeOrderSlice.reducer,
+  shoppingCart: shoppingCartSlice.reducer,
+  order: placeOrderSlice.reducer,
 });
 // 3.use it in the store
 
 // const store = createStore(rootReducer,applyMiddleware(thunk,actionLog));//add the middle ware thunk
 // const store = createStore(rootReducer,applyMiddleware(thunk));//add the middle ware thunk
 
-const persistedReducer = persistReducer(persistConfig,rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
   reducer: persistedReducer,
@@ -52,5 +52,7 @@ const persistor = persistStore(store)
 
 //3.Root State in the store.ts
 export type RootState = ReturnType<typeof store.getState>;
-
-export default {store,persistor};
+// Assign object to variable before exporting as module default
+// https://bobbyhadz.com/blog/react-assign-object-to-variable-before-exporting-as-module
+const globalvalue = { store, persistor }
+export default globalvalue;;

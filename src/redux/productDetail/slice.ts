@@ -28,7 +28,7 @@ export const giveMeProductDetails = createAsyncThunk(
 
   async (touristRouteId: string, thunkAPI) => {
     const { data } = await axios.get(
-      `http://123.56.149.216:8089/api/touristRoutes/${touristRouteId}`
+      `${process.env.REACT_APP_API}/api/touristRoutes/${touristRouteId}`
     );
     return data;
   }

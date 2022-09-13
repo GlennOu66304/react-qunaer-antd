@@ -48,7 +48,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (
     dispatch(giveMeProductDetails(touristRouteId));
 
     // return something
-  }, []);
+  }, [dispatch,touristRouteId]);
 
   //   checked the outputed value
   // console.log(product)

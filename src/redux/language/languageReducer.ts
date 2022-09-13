@@ -27,7 +27,7 @@ const defaultState: LanguageState = {
 // How can I get rid of the warning import/no-anonymous-default-export in React?
 // https://stackoverflow.com/questions/64729264/how-can-i-get-rid-of-the-warning-import-no-anonymous-default-export-in-react
 // 3.axport the reducer
-export default (state = defaultState, action:LanguageActionTypes) => {
+ const languageReducer =  (state = defaultState, action:LanguageActionTypes) => {
   // console.log(state,action);
   // switch is a fuction
   switch (action.type) {
@@ -45,3 +45,8 @@ export default (state = defaultState, action:LanguageActionTypes) => {
       return state;
   }
 };
+
+export default languageReducer
+
+// cannot export const arrow function
+// https://stackoverflow.com/questions/34676984/cannot-export-const-arrow-function

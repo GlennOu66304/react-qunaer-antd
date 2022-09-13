@@ -27,7 +27,7 @@ export const placeOrder = createAsyncThunk(
     thunkAPI
   ) => {
     const { data } = await axios.post(
-      `http://123.56.149.216:8089/api/orders/${paramaters.orderId}/placeOrder`,
+      `${process.env.REACT_APP_API}/api/orders/${paramaters.orderId}/placeOrder`,
       null,
 
       {

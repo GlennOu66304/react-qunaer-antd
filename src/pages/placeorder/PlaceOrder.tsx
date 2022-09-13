@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./PlaceOrder.module.css";
+// import styles from "./PlaceOrder.module.css";
 import { Row, Col } from "antd";
 import { MainLayout } from "../../layouts";
 import { PaymentForm, CheckOutCard } from "../../components";
-import Cards from "react-credit-cards";
+// import Cards from "react-credit-cards";
 import { useSelector } from "../../redux/hooks";
 
 import { useDispatch } from "react-redux";

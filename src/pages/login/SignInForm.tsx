@@ -10,7 +10,7 @@ export const SignInForm: React.FC = () => {
   // first get the state,
   const loading = useSelector((state) => state.user.loading);
   const jwt = useSelector((state) => state.user.token);
-  const error = useSelector((state) => state.user.error);
+  // const error = useSelector((state) => state.user.error);
   const history = useHistory();
   const dispatch = useDispatch();
   // then fetch the data from the useEfect
@@ -25,7 +25,7 @@ export const SignInForm: React.FC = () => {
     if (jwt!==null) {
       history.push("/");
     }
-  }, [jwt]);
+  }, [history,jwt]);
 
   const onFinish = (values: any) => {
     // console.log("Success:", values);

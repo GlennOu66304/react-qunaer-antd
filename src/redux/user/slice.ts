@@ -24,7 +24,7 @@ export const signIn = createAsyncThunk(
     },
     thunkAPI
   ) => {
-    const { data } = await axios.post(`http://123.56.149.216:8089/auth/login`, {
+    const { data } = await axios.post(`${process.env.REACT_APP_API}/auth/login`, {
       email: paramaters.email,
       password: paramaters.password,
     });
